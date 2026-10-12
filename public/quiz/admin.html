@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0E2547">
+<title>ניהול שאלון ההורים | ארץ הצבי</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Suez+One&display=swap" rel="stylesheet">
+<script>(function(){var p=location.pathname;if(!/\/$/.test(p)&&!/\.[a-z0-9]+$/i.test(p))document.write('<base href="'+p+'/">');})();</script>
+<link rel="icon" href="img/favicon.png">
+<style>
+:root{--navy:#0E2547;--ink:#44527A;--gold:#E8AE2E;--sun:#FFF1CC;--line:2px solid var(--navy);--font:'Suez One','Arial Hebrew',Arial,sans-serif;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;font-family:var(--font);color:var(--navy);background:var(--sun)}
+button,input,select{font-family:inherit;color:inherit}
+:focus-visible{outline:3px dashed var(--navy);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:18px 16px 60px}
+h1,h2,h3{font-weight:400;margin:0}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.top h1{font-size:28px}
+.btn{border:var(--line);background:var(--gold);border-radius:999px;padding:10px 18px;font-size:16px;cursor:pointer;box-shadow:0 3px 0 var(--navy);white-space:nowrap}
+.btn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--navy)}
+.btn.w{background:#fff}
+.gate{max-width:380px;margin:12vh auto;background:#fff;border:var(--line);border-radius:24px;padding:26px 22px;box-shadow:0 5px 0 var(--navy);text-align:center}
+.gate h1{font-size:26px;margin-bottom:6px}
+.gate img{width:64px;height:auto;margin-bottom:8px}
+.gate p{color:var(--ink);margin:0 0 16px;font-size:15px}
+.gate input{width:100%;height:52px;border:var(--line);border-radius:14px;font-size:18px;padding:0 14px;margin-bottom:12px;text-align:center}
+.gate .btn{width:100%;font-size:19px;padding:12px}
+.err{color:#B3261E;min-height:22px;font-size:15px;margin-top:8px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:16px}
+.kpi{background:#fff;border:var(--line);border-radius:20px;padding:14px 16px;box-shadow:0 3px 0 var(--navy)}
+.kpi b{display:block;font-weight:400;font-size:34px;line-height:1.1}
+.kpi span{font-size:14.5px;color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px;margin-bottom:18px}
+.card{background:#fff;border:var(--line);border-radius:22px;padding:16px 18px;box-shadow:0 3px 0 var(--navy)}
+.card h2{font-size:20px;margin-bottom:12px}
+.card .sub{font-size:13.5px;color:var(--ink);margin:-8px 0 12px}
+.row{display:grid;grid-template-columns:minmax(90px,38%) 1fr auto;align-items:center;gap:10px;margin-bottom:8px;font-size:14.5px}
+.row .lbl{line-height:1.25}
+.track{height:16px;background:#EEF1F7;border-radius:99px;overflow:hidden;position:relative}
+.track i{position:absolute;top:0;bottom:0;right:0;border-radius:99px}
+.track i.rec{opacity:.3}
+.row .n{min-width:44px;text-align:left;font-size:14px}
+.legend{display:flex;gap:14px;font-size:13px;color:var(--ink);margin-bottom:10px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:4px;background:var(--navy);margin-left:6px;vertical-align:-1px}
+.legend span.r::before{opacity:.3}
+.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:6px 0 12px}
+.tools input,.tools select{height:44px;border:var(--line);border-radius:12px;padding:0 12px;font-size:15px;background:#fff}
+.tools input{flex:1;min-width:180px}
+.tablebox{background:#fff;border:var(--line);border-radius:20px;overflow-x:auto;box-shadow:0 3px 0 var(--navy)}
+table{border-collapse:collapse;width:100%;min-width:1100px;font-size:14px}
+th,td{padding:10px 12px;text-align:right;vertical-align:top;border-bottom:1px solid #E1E6F0}
+th{background:var(--navy);color:#fff;font-weight:400;position:sticky;top:0;white-space:nowrap}
+tr.main{cursor:pointer}
+tr.main:hover td{background:#FFF8E3}
+tr.det td{background:#FBFCFF;font-size:13.5px;line-height:1.6;color:var(--ink)}
+.st{display:inline-block;border-radius:8px;padding:1px 8px;font-size:12.5px;border:1.5px solid var(--navy);white-space:nowrap}
+.st.done{background:#DDF3E2}.st.join{background:var(--gold)}.st.mid{background:#FFE8D1}.st.view{background:#EEF1F7}
+.ltr{direction:ltr;unicode-bidi:plaintext}
+.note{font-size:13.5px;color:var(--ink);margin:8px 2px}
+.demo{background:#fff;border:2px dashed var(--navy);border-radius:14px;padding:8px 12px;font-size:14px;margin-bottom:14px}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<script>
+/* ===== להדביק כאן את אותה כתובת Web App כמו ב-index.html ===== */
+const API_URL = 'https://script.google.com/macros/s/AKfycbyX7EwMGVBKn6qnca-quhkR4xAoWW0Hmp1DVF-Vg1Rkcy0toeXXkHSVywOJOuspY3zbRA/exec';
+
+let CLUSTERS = [
+  ['talan','אשכול תל"ן וחוגים','תל"ן וחוגים','#6A5AE0'],
+  ['books','אשכול השאלת ספרים','השאלת ספרים','#13968C'],
+  ['marketing','אשכול שיווק ודוברות','שיווק ודוברות','#EE5A4F'],
+  ['inclusion','אשכול שילוב, חינוך מיוחד, ילדים מחוננים וזכויות הורים','שילוב וזכויות','#1E9ED6'],
+  ['afterschool','אשכול צהרון','צהרון','#F28A1C'],
+  ['finance','אשכול כספים','כספים','#3FA35B'],
+  ['infra','אשכול תשתיות, ניקיון, ביטחון ובטיחות','תשתיות ובטיחות','#C0603A'],
+  ['events','אשכול אירועים','אירועים','#E2468F'],
+  ['community','ועדת מעורבות קהילתית','מעורבות קהילתית','#D99A00'],
+  ['gifts','ועדת מתנות ויום המורה','מתנות ויום המורה','#A14FD0']
+].map(([id,name,short,color]) => ({id,name,short,color}));
+let CLASSES = ['א׳1','א׳2','ב׳1','ב׳2','ג׳1','ג׳2','ד׳1','ד׳2','ה׳1','ה׳2','ו׳1'];
+const ENG = {occasional:'משימה קטנה מדי פעם', project:'פרויקט נקודתי', regular:'חלק קבוע', leader:'מוכנים להוביל'};
+const STAGES = [['details','מסך הפרטים'],['q1','שאלה 1'],['q2','שאלה 2'],['q3','שאלה 3'],['q4','שאלה 4'],['q5','שאלה 5'],['q6','שאלה 6'],['q7','שאלה 7'],['q8','שאלה 8']];
+const QT = ['סופר-כוח','שעה פנויה','הודעת וואטסאפ','מה היית משפר','איזה משפט','משימת התנדבות','דמות','רמת מעורבות'];
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const isTrue = v => v === true || String(v).toUpperCase() === 'TRUE';
+const fmt = v => { if (!v) return ''; const d = new Date(v); return isNaN(d) ? String(v) : d.toLocaleString('he-IL', {day:'2-digit',month:'2-digit',year:'2-digit',hour:'2-digit',minute:'2-digit'}); };
+const splitSel = v => String(v || '').split('|').map(s => s.trim()).filter(Boolean);
+let ROWS = [], DEMO = false;
+async function loadConfig() {
+  if (!API_URL) return;
+  try {
+    const j = await (await fetch(`${API_URL}?action=config`)).json();
+    const c = j && j.config;
+    if (c && Array.isArray(c.clusters) && c.clusters.length) CLUSTERS = c.clusters.map(x => ({ id:x.id, name:x.name, short:x.short || x.name, color:x.color }));
+    if (c && Array.isArray(c.classes) && c.classes.length) CLASSES = c.classes;
+  } catch (e) {}
+}
+const ids = r => { try { const v = typeof r.cluster_ids === 'object' ? r.cluster_ids : JSON.parse(r.cluster_ids || 'null'); return v || {}; } catch (e) { return {}; } };
+const selOf = (r, c) => { const v = ids(r); return Array.isArray(v.sel) && v.sel.length ? v.sel.includes(c.id) : splitSel(r.selected_clusters).includes(c.name); };
+const recOf = (r, c) => { const v = ids(r); return v.f1 ? (v.f1 === c.id || v.f2 === c.id) : (r.final_match_1 === c.name || r.final_match_2 === c.name); };
+
+function gate(msg = '') {
+  $('#app').innerHTML = `<form class="gate" id="g"><img src="img/logo-mark.webp" alt=""><h1>ניהול שאלון ההורים</h1><p>הכניסה מיועדת להנהגת ההורים בלבד.</p>
+    <label for="pw" style="position:absolute;opacity:0">סיסמה</label>
+    <input id="pw" type="password" autocomplete="current-password" placeholder="סיסמה">
+    <button class="btn" type="submit">כניסה</button><div class="err" role="alert">${esc(msg)}</div>
+    <p style="margin-top:14px;font-size:14px"><button class="btn w" type="button" id="dm">הצגה עם נתוני דוגמה</button></p></form>`;
+  $('#g').onsubmit = e => { e.preventDefault(); load($('#pw').value); };
+  const dm = $('#dm'); if (dm) dm.onclick = () => { DEMO = true; ROWS = sample(); render(); };
+  $('#pw').focus();
+}
+
+async function load(pw) {
+  if (!API_URL) return gate('צריך להדביק את כתובת ה-Web App בקובץ admin.html');
+  try {
+    const r = await fetch(`${API_URL}?action=list&key=${encodeURIComponent(pw)}`);
+    const j = await r.json();
+    if (!j.ok) return gate(j.error === 'unauthorized' ? 'הסיסמה לא נכונה' : 'שגיאה בטעינת הנתונים');
+    sessionStorage.setItem('hz-admin', pw);
+    ROWS = j.rows || []; render();
+  } catch (e) { gate('אין חיבור לגיליון. בדקו את כתובת ה-Web App'); }
+}
+
+function bars(items, max, extra = '') {
+  return items.map(it => `<div class="row"><span class="lbl">${esc(it.label)}</span>
+    <span class="track">${it.rec != null ? `<i class="rec" style="width:${max ? it.rec / max * 100 : 0}%;background:${it.color || '#0E2547'}"></i>` : ''}<i style="width:${max ? it.v / max * 100 : 0}%;background:${it.color || '#0E2547'}"></i></span>
+    <span class="n">${it.v}${it.rec != null ? ` / ${it.rec}` : ''}${it.pct != null ? ` (${it.pct}%)` : ''}</span></div>`).join('');
+}
+
+function status(r) {
+  if (splitSel(r.selected_clusters).length) return ['join','ביקש/ה להצטרף'];
+  if (isTrue(r.completed)) return ['done','השלים/ה'];
+  if (r.stage && r.stage !== 'welcome') return ['mid', r.stage === 'details' ? 'עצר/ה בפרטים' : `עצר/ה ב${r.stage.replace('q','שאלה ')}`];
+  return ['view','רק נכנס/ה'];
+}
+
+function render() {
+  const rows = ROWS.slice().sort((a, b) => new Date(b.updated_at || 0) - new Date(a.updated_at || 0));
+  const started = rows.filter(r => r.stage && r.stage !== 'welcome');
+  const completed = rows.filter(r => isTrue(r.completed));
+  const joined = rows.filter(r => splitSel(r.selected_clusters).length);
+  const dropped = started.filter(r => !isTrue(r.completed));
+  const pct = (a, b) => b ? Math.round(a / b * 100) : 0;
+
+  const drop = STAGES.map(([k, l]) => ({ label:l, v: dropped.filter(r => r.stage === k).length }));
+  const clusters = CLUSTERS.map(c => ({
+    label:c.short, color:c.color,
+    v: rows.filter(r => selOf(r, c)).length,
+    rec: completed.filter(r => recOf(r, c)).length
+  }));
+  const eng = Object.entries(ENG).map(([k, l]) => ({ label:l, v: completed.filter(r => r.engagement === k).length }));
+  const cls = CLASSES.map(c => ({ label:c, v: started.filter(r => String(r.classes || '').split(',').map(s => s.trim()).includes(c)).length }));
+  const mx = a => Math.max(1, ...a.map(x => Math.max(x.v, x.rec || 0)));
+
+  $('#app').innerHTML = `
+    <div class="top"><h1>שאלון ההורים: תמונת מצב</h1>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn w" id="rf">רענון</button>
+        <button class="btn" id="csv">ייצוא לאקסל (CSV)</button>
+      </div></div>
+    ${DEMO ? '<div class="demo">אלה נתוני דוגמה בלבד, כדי לראות איך הדשבורד ייראה. אחרי חיבור הגיליון יופיעו כאן הנתונים האמיתיים.</div>' : ''}
+    <div class="kpis">
+      <div class="kpi"><b>${rows.length}</b><span>נכנסו לשאלון</span></div>
+      <div class="kpi"><b>${started.length}</b><span>התחילו (לחצו "מתחילים")</span></div>
+      <div class="kpi"><b>${completed.length}</b><span>השלימו את כל השאלות</span></div>
+      <div class="kpi"><b>${pct(dropped.length, started.length)}%</b><span>נטישה מבין מי שהתחילו</span></div>
+      <div class="kpi"><b>${joined.length}</b><span>ביקשו להצטרף בפועל</span></div>
+      <div class="kpi"><b>${completed.filter(r => r.engagement === 'leader').length}</b><span>מוכנים להוביל</span></div>
+      <div class="kpi"><b>${completed.filter(r => r.engagement === 'occasional' || r.engagement === 'project').length}</b><span>מעדיפים פעילות נקודתית</span></div>
+    </div>
+    <div class="grid">
+      <div class="card"><h2>עניין בכל אשכול</h2>
+        <div class="legend"><span>ביקשו להצטרף</span><span class="r">הומלץ להם</span></div>
+        ${bars(clusters, mx(clusters))}</div>
+      <div class="card"><h2>איפה נוטשים</h2><p class="sub">השלב האחרון שאליו הגיעו ${dropped.length} הורים שלא סיימו</p>${bars(drop, mx(drop))}</div>
+      <div class="card"><h2>רמת מעורבות</h2><p class="sub">מתוך ${completed.length} שהשלימו</p>${bars(eng.map(e => ({...e, pct:pct(e.v, completed.length)})), mx(eng))}</div>
+      <div class="card"><h2>פילוח לפי כיתות</h2><p class="sub">הורה עם כמה ילדים נספר בכל כיתה</p>${bars(cls, mx(cls))}</div>
+    </div>
+    <h2 style="font-size:22px;margin:6px 0 4px">כל ההורים</h2>
+    <div class="tools">
+      <input id="q" placeholder="חיפוש לפי שם, טלפון, מייל או כיתה">
+      <select id="f"><option value="all">כולם</option><option value="join">ביקשו להצטרף</option><option value="done">השלימו</option><option value="mid">באמצע</option><option value="view">רק נכנסו</option></select>
+    </div>
+    <div class="tablebox"><table><thead><tr>
+      <th>עודכן</th><th>שם</th><th>כיתות</th><th>טלפון</th><th>מייל</th><th>סטטוס</th><th>רמת מעורבות</th><th>המלצה 1</th><th>המלצה 2</th><th>ביקש/ה להצטרף</th>
+    </tr></thead><tbody id="tb"></tbody></table></div>
+    <p class="note">לחיצה על שורה פותחת את התשובות המלאות. הנתונים המקוריים נמצאים גם בגיליון עצמו.</p>`;
+
+  const draw = () => {
+    const q = $('#q').value.trim().toLowerCase(), f = $('#f').value;
+    const list = rows.filter(r => (f === 'all' || status(r)[0] === f) &&
+      (!q || [r.name, r.phone, r.email, r.classes].join(' ').toLowerCase().includes(q)));
+    $('#tb').innerHTML = list.map((r, i) => {
+      const [k, l] = status(r);
+      const short = n => (CLUSTERS.find(c => c.name === n) || {}).short || n || '';
+      const ans = [1,2,3,4,5,6,7,8].map(n => r['q'+n] ? `<b>${QT[n-1]}:</b> ${esc(r['q'+n])}` : '').filter(Boolean).join('<br>');
+      return `<tr class="main" data-i="${i}" tabindex="0"><td>${fmt(r.updated_at)}</td><td>${esc(r.name)}</td><td>${esc(r.classes)}</td>
+        <td class="ltr">${esc(String(r.phone || '').replace(/^'/,''))}</td><td class="ltr">${esc(r.email)}</td>
+        <td><span class="st ${k}">${l}</span></td><td>${esc(ENG[r.engagement] || '')}</td>
+        <td>${esc(short(r.final_match_1))}</td><td>${esc(short(r.final_match_2))}</td>
+        <td>${splitSel(r.selected_clusters).map(short).map(esc).join(', ')}</td></tr>
+        <tr class="det" hidden><td colspan="10">${ans || 'עדיין אין תשובות.'}<br><b>התחיל/ה:</b> ${fmt(r.started_at)} ${r.completed_at ? ` · <b>סיים/ה:</b> ${fmt(r.completed_at)}` : ''}${r.joined_at ? ` · <b>שלח/ה בקשה:</b> ${fmt(r.joined_at)}` : ''}${r.utm_source ? ` · <b>מקור:</b> ${esc(r.utm_source)} ${esc(r.utm_campaign || '')}` : ''}</td></tr>`;
+    }).join('') || '<tr><td colspan="10">אין תוצאות לחיפוש הזה.</td></tr>';
+    document.querySelectorAll('tr.main').forEach(tr => {
+      const t = () => { const d = tr.nextElementSibling; d.hidden = !d.hidden; };
+      tr.onclick = t; tr.onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); t(); } };
+    });
+    return list;
+  };
+  $('#q').oninput = draw; $('#f').onchange = draw;
+  $('#rf').onclick = () => DEMO ? render() : load(sessionStorage.getItem('hz-admin') || '');
+  $('#csv').onclick = () => exportCSV(draw());
+  draw();
+}
+
+function exportCSV(list) {
+  const cols = [
+    ['updated_at','עודכן'],['started_at','התחיל'],['completed_at','סיים'],['joined_at','שלח בקשה'],
+    ['name','שם'],['classes','כיתות'],['phone','טלפון'],['email','מייל'],['stage','שלב אחרון'],['completed','השלים'],
+    ['q1','ש1 סופר-כוח'],['q2','ש2 שעה פנויה'],['q3','ש3 וואטסאפ'],['q4','ש4 מה לשפר'],['q5','ש5 משפט'],['q6','ש6 התנדבות'],['q7','ש7 דמות'],['q8','ש8 מעורבות'],
+    ['engagement','רמת מעורבות (קוד)'],['final_match_1','המלצה 1'],['final_match_2','המלצה 2'],['selected_clusters','ביקש להצטרף'],
+    ['calculated_scores','ניקוד'],['utm_source','utm_source'],['utm_medium','utm_medium'],['utm_campaign','utm_campaign'],['referrer','הגיע מ'],['device','מכשיר'],['session_id','מזהה']
+  ];
+  const cell = v => { v = typeof v === 'object' && v ? JSON.stringify(v) : String(v ?? ''); if (/^[=+\-@]/.test(v)) v = "'" + v; return '"' + v.replace(/"/g, '""') + '"'; };
+  const lines = [cols.map(c => cell(c[1])).join(',')].concat(list.map(r => cols.map(([k]) => {
+    let v = r[k];
+    if (k === 'phone') v = String(v || '').replace(/^'/,'');
+    if (['updated_at','started_at','completed_at','joined_at'].includes(k)) v = fmt(v);
+    if (k === 'selected_clusters') v = splitSel(v).join(', ');
+    return cell(v);
+  }).join(',')));
+  const blob = new Blob(['\ufeff' + lines.join('\r\n')], { type:'text/csv;charset=utf-8' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `שאלון-הורים-${new Date().toISOString().slice(0,10)}.csv`;
+  document.body.appendChild(a); a.click(); a.remove();
+}
+
+function sample() {
+  const names = ['מיכל לוי','יוסי כהן','רחל אברהם','אבי מזרחי','שירה פרץ','דוד ביטון','נועה פרידמן','אליהו דהן','תמר שפירא','עמית גבאי','הדס אוחיון','משה רוזן','יעל בן דוד','אורי חדד','אסתר וקנין','נתנאל גולן','רותם אלון','חיים ששון'];
+  let seed = 7; const rnd = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+  const pick = a => a[Math.floor(rnd() * a.length)];
+  return names.map((n, i) => {
+    const stageIdx = Math.floor(rnd() * 13);
+    const done = stageIdx >= 9;
+    const stage = stageIdx === 0 ? 'welcome' : stageIdx === 1 ? 'details' : done ? (rnd() > .35 ? 'joined' : 'results') : 'q' + (stageIdx - 1);
+    const f1 = pick(CLUSTERS), f2 = pick(CLUSTERS.filter(c => c !== f1));
+    const sel = stage === 'joined' ? [f1, ...(rnd() > .5 ? [f2] : [])].map(c => c.name).join(' | ') : '';
+    const t = new Date(Date.now() - i * 3.7e6);
+    const r = { session_id:'demo' + i, name: stage === 'welcome' ? '' : n, classes: stage === 'welcome' ? '' : [pick(CLASSES), ...(rnd() > .7 ? [pick(CLASSES)] : [])].join(', '),
+      phone: rnd() > .4 && stage !== 'welcome' ? '05' + Math.floor(rnd() * 1e8).toString().padStart(8,'0') : '', email: rnd() > .6 && stage !== 'welcome' ? `parent${i}@example.com` : '',
+      stage, completed: done, engagement: done ? pick(Object.keys(ENG)) : '',
+      final_match_1: done ? f1.name : '', final_match_2: done ? f2.name : '', selected_clusters: sel,
+      started_at: t.toISOString(), updated_at: t.toISOString(), completed_at: done ? t.toISOString() : '', joined_at: sel ? t.toISOString() : '' };
+    const upto = done ? 8 : Math.max(0, stageIdx - 2);
+    for (let q = 1; q <= upto; q++) r['q'+q] = `${pick(['א','ב','ג','ד'])}. (תשובה לדוגמה)`;
+    return r;
+  });
+}
+
+const saved = sessionStorage.getItem('hz-admin');
+loadConfig().then(() => { if (API_URL && saved) load(saved); else gate(); });
+</script>
+</body>
+</html>

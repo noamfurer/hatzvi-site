@@ -1,0 +1,1380 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0E2547">
+<title>איזה הורה פעיל את/ה? | ארץ הצבי במורשת</title>
+<meta name="description" content="שאלון קצר ומשחקי לקהילת ההורים של ארץ הצבי: גלו איזו פעילות קהילתית בבית הספר הכי מתאימה לכם.">
+<meta property="og:title" content="איזה הורה פעיל את/ה?">
+<meta property="og:description" content="8 שאלות קצרות, ובסוף נגלה איזו פעילות בבית הספר הכי מתאימה לך.">
+<meta property="og:image" content="https://hatzvi.site/img/og-share.jpg">
+<meta property="og:locale" content="he_IL">
+<script>(function(){var p=location.pathname;if(!/\/$/.test(p)&&!/\.[a-z0-9]+$/i.test(p))document.write('<base href="'+p+'/">');})();</script>
+<link rel="icon" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Suez+One&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0E2547; --navy-2:#24477F; --ink-soft:#44527A;
+  --gold:#E8AE2E; --gold-2:#F2C14E; --gold-deep:#B9821A;
+  --sun:#FFF1CC; --sun-2:#FFE6A3; --white:#FFFFFF;
+  --line:2.5px solid var(--navy);
+  --font:'Suez One','Arial Hebrew','Noto Sans Hebrew',Arial,sans-serif;
+  --acc:#E8AE2E; --acc-soft:#FFF1CC;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+html,body{margin:0}
+body{
+  font-family:var(--font);color:var(--navy);background:var(--sun);
+  min-height:100vh;min-height:100dvh;overflow-x:hidden;
+  -webkit-tap-highlight-color:transparent;font-weight:400;
+}
+button,input{font-family:inherit;color:inherit}
+img,svg{max-width:100%}
+:focus-visible{outline:3px dashed var(--navy);outline-offset:4px;border-radius:12px}
+[tabindex="-1"]:focus{outline:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* רקע */
+.deco{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.deco svg{position:absolute}
+.deco .d1{top:-90px;left:-110px;width:300px}
+.deco .d2{bottom:-120px;right:-120px;width:340px}
+.deco .d3{top:38%;right:-46px;width:110px}
+
+.app{position:relative;z-index:1;max-width:520px;margin:0 auto;padding:10px 18px 56px;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 0 12px}
+.brand{display:flex;align-items:center;gap:9px;font-size:15px;color:var(--navy);text-decoration:none}
+.brand img{width:auto;height:40px;object-fit:contain}
+.save{font-size:13px;color:var(--ink-soft);display:flex;align-items:center;gap:6px;opacity:0;transition:opacity .35s}
+.save.show{opacity:1}
+.save i{width:9px;height:9px;border-radius:50%;background:#3FA35B;display:inline-block}
+.save.saving i{background:var(--gold);animation:blink 1s infinite}
+.save.error i{background:#D64545}
+@keyframes blink{50%{opacity:.3}}
+
+#stage{flex:1;position:relative}
+.screen{animation:inF .4s cubic-bezier(.2,.8,.2,1) both}
+.screen.from-b{animation-name:inB}
+.screen.out-f{animation:outF .2s ease-in both}
+.screen.out-b{animation:outB .2s ease-in both}
+@keyframes inF{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:none}}
+@keyframes inB{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:none}}
+@keyframes outF{to{opacity:0;transform:translateX(40px)}}
+@keyframes outB{to{opacity:0;transform:translateX(-40px)}}
+
+/* טיפוגרפיה */
+h1,h2,h3{font-weight:400;margin:0;letter-spacing:-.01em}
+.h-xl{font-size:clamp(44px,13.5vw,62px);line-height:.98}
+.h-lg{font-size:clamp(30px,8.6vw,38px);line-height:1.08}
+.h-md{font-size:24px;line-height:1.15}
+.lead{font-size:18px;line-height:1.6;color:var(--ink-soft);margin:0 0 12px}
+.small{font-size:14.5px;line-height:1.55;color:var(--ink-soft)}
+
+/* כפתורים */
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:10px;width:100%;
+  min-height:62px;padding:14px 24px;border:var(--line);border-radius:999px;
+  background:var(--gold);color:var(--navy);font-size:22px;cursor:pointer;
+  box-shadow:0 5px 0 var(--navy);transition:transform .12s ease,box-shadow .12s ease,background .2s;
+  text-decoration:none;
+}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 var(--navy)}
+.btn.navy{background:var(--navy);color:#fff;box-shadow:0 5px 0 var(--gold-deep)}
+.btn.navy:active{box-shadow:0 1px 0 var(--gold-deep)}
+.btn.white{background:#fff}
+.btn.sm{min-height:50px;font-size:18px;padding:10px 18px}
+.btn[disabled]{opacity:.5;cursor:not-allowed;transform:none;box-shadow:0 5px 0 var(--navy)}
+.btn svg{flex:none}
+.txt-btn{background:none;border:0;padding:10px;font-size:16px;color:var(--navy-2);text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+@media (hover:hover){
+  .btn:not([disabled]):hover{transform:translateY(-2px);box-shadow:0 7px 0 var(--navy)}
+  .btn.navy:not([disabled]):hover{box-shadow:0 7px 0 var(--gold-deep)}
+}
+
+/* פתיחה */
+.welcome .hero{margin:0 -14px 2px}
+.welcome .hero svg{display:block;width:100%;height:auto}
+.title-wrap{position:relative;display:inline-block;margin:4px 0 16px}
+.title-wrap .swoosh{position:absolute;right:-4px;left:-4px;bottom:-14px;height:18px;width:calc(100% + 8px)}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 22px}
+.pill{display:inline-flex;align-items:center;gap:6px;background:#fff;border:2px solid var(--navy);border-radius:999px;padding:6px 12px;font-size:14.5px}
+.pill:nth-child(2){transform:rotate(-2deg)}
+.pill:nth-child(3){transform:rotate(1.5deg)}
+
+/* פרטים */
+.nametag{background:#fff;border:var(--line);border-radius:24px;box-shadow:0 5px 0 var(--navy);overflow:hidden;transform:rotate(-1.2deg);margin:22px 4px 26px}
+.nametag .strip{background:var(--navy);color:#fff;padding:12px 18px 10px;display:flex;align-items:baseline;justify-content:space-between}
+.nametag .strip b{font-weight:400;font-size:30px;color:var(--gold-2);line-height:1}
+.nametag .strip span{font-size:16px}
+.nametag .slot{padding:14px 18px 18px}
+.nametag input{width:100%;border:0;border-bottom:2.5px dashed #9AA6C2;background:transparent;font-size:28px;padding:6px 2px 8px;text-align:center;outline:none}
+.nametag input:focus{border-bottom-color:var(--navy)}
+.nametag input::placeholder{color:#B4BDD2}
+.f-label{font-size:21px;margin:0 0 4px;display:block}
+.f-sub{font-size:14.5px;color:var(--ink-soft);margin:0 0 12px}
+.chips{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:26px}
+.chip{
+  aspect-ratio:1/1;border-radius:50%;border:var(--line);background:#fff;font-size:21px;cursor:pointer;
+  display:grid;place-items:center;position:relative;box-shadow:0 4px 0 var(--navy);
+  transition:transform .15s,background .2s,box-shadow .12s;
+}
+.chip:active{transform:translateY(3px);box-shadow:0 1px 0 var(--navy)}
+.chip[aria-pressed="true"]{background:var(--gold);animation:pop .35s}
+.chip[aria-pressed="true"]::after{
+  content:"";position:absolute;top:-4px;left:-4px;width:24px;height:24px;border-radius:50%;
+  background:var(--navy) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%23F2C14E' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat;
+}
+.chip:nth-child(4n+2){transform:rotate(-3deg)}
+.chip:nth-child(4n+4){transform:rotate(2.5deg)}
+.chip:nth-child(4n+2):active,.chip:nth-child(4n+4):active{transform:translateY(3px)}
+.opt-box{background:rgba(255,255,255,.55);border:2px dashed #9AA6C2;border-radius:22px;padding:16px 16px 6px;margin-bottom:14px}
+.inp{position:relative;margin-bottom:12px}
+.inp svg{position:absolute;right:14px;top:50%;transform:translateY(-50%);pointer-events:none}
+.inp input{width:100%;height:56px;border:var(--line);border-radius:16px;background:#fff;font-size:19px;padding:0 50px 0 14px;outline:none}
+.inp input:focus{box-shadow:0 0 0 4px var(--sun-2)}
+.inp input[dir="ltr"]{text-align:right}
+.inp input::placeholder{color:#9AA6C2}
+.hint{font-size:14.5px;color:var(--ink-soft);display:flex;gap:8px;align-items:flex-start;margin:4px 2px 22px;line-height:1.5}
+.err{color:#B3261E;font-size:16px;min-height:22px;margin:0 2px 10px}
+.shake{animation:shake .4s}
+@keyframes shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+
+/* שאלה */
+.qhead{display:flex;align-items:center;gap:12px;margin:2px 0 22px}
+.back{flex:none;width:46px;height:46px;border-radius:50%;border:var(--line);background:#fff;display:grid;place-items:center;cursor:pointer;box-shadow:0 3px 0 var(--navy)}
+.back:active{transform:translateY(2px);box-shadow:0 1px 0 var(--navy)}
+.prog{flex:1}
+.prog .count{font-size:15px;margin-bottom:6px;display:flex;justify-content:space-between}
+.prog .count small{font-size:13px;color:var(--ink-soft)}
+.bar{height:16px;border:var(--line);border-radius:99px;background:#fff;overflow:hidden}
+.bar span{display:block;height:100%;width:0;border-radius:99px;background:repeating-linear-gradient(-45deg,var(--gold) 0 9px,var(--gold-2) 9px 18px);transition:width .6s cubic-bezier(.3,1.35,.5,1)}
+.qtitle{font-size:clamp(28px,7.8vw,34px);line-height:1.14;margin:0 0 8px}
+.qsub{font-size:16px;color:var(--ink-soft);margin:0 0 4px}
+.opts{display:grid;gap:13px;margin-top:20px}
+.opt{
+  display:flex;align-items:center;gap:14px;width:100%;text-align:right;
+  background:#fff;border:var(--line);border-radius:22px;padding:14px 16px;min-height:78px;
+  font-size:19px;line-height:1.35;cursor:pointer;position:relative;
+  box-shadow:0 4px 0 var(--navy);transition:transform .14s,box-shadow .14s,background .2s,opacity .25s;
+}
+.opt .ic{flex:none;width:54px;height:54px;display:grid;place-items:center;font-size:27px;background:var(--acc-soft);border:2px solid var(--navy);border-radius:18px 24px 16px 26px}
+.opt .tx{flex:1}
+.opt:active{transform:translateY(3px);box-shadow:0 1px 0 var(--navy)}
+.opt.was{background:var(--acc-soft)}
+.opt.picked{background:var(--acc-soft);animation:pop .45s}
+.opt.picked .ic{animation:wiggle .5s}
+.opt.was::after,.opt.picked::after{
+  content:"";position:absolute;top:-10px;left:-8px;width:32px;height:32px;border-radius:50%;border:2px solid var(--navy);
+  background:var(--acc) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%230E2547' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/20px no-repeat;
+}
+.opts.locked .opt:not(.picked){opacity:.45}
+@media (hover:hover){.opt:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--navy)}}
+@keyframes pop{0%{transform:scale(1)}40%{transform:scale(1.045) rotate(-1deg)}100%{transform:scale(1)}}
+@keyframes wiggle{0%,100%{transform:none}30%{transform:rotate(-12deg) scale(1.1)}60%{transform:rotate(9deg)}}
+
+/* שאלה 3 – צ'אט */
+.chat{background:#E9F6DF;border:var(--line);border-radius:26px;padding:16px 14px 18px;margin-top:20px;
+  background-image:radial-gradient(#cfe7bf 1.3px,transparent 1.4px);background-size:16px 16px;}
+.chat .day{display:table;margin:0 auto 12px;background:#fff;border:2px solid var(--navy);border-radius:10px;padding:2px 10px;font-size:13px}
+.chat .opts{margin-top:0;gap:12px}
+.chat .opt{border-radius:20px 6px 20px 20px;min-height:0;padding:10px 14px 8px;display:block;width:92%;font-size:19px;box-shadow:0 3px 0 var(--navy)}
+.chat .opt:nth-child(even){margin-right:6%}
+.chat .opt .who{display:block;font-size:13.5px;margin-bottom:3px}
+.chat .opt .meta{display:flex;justify-content:flex-end;align-items:center;gap:4px;font-size:12px;color:#6C7A93;margin-top:4px}
+.chat .opt .ticks{color:#9AA6C2}
+.chat .opt.picked .ticks,.chat .opt.was .ticks{color:#2A8BE0}
+.chat .opt.picked::after,.chat .opt.was::after{
+  content:"❤️";background:#fff;width:34px;height:34px;display:grid;place-items:center;font-size:17px;top:auto;bottom:-14px;left:12px;
+}
+
+/* שאלה 5 – ציטוטים */
+.quotes{gap:22px}
+.quotes .opt{display:block;padding:20px 20px 16px;font-size:21px;border-radius:8px 26px 26px 26px}
+.quotes .opt:nth-child(odd){transform:rotate(-.8deg)}
+.quotes .opt:nth-child(even){transform:rotate(.8deg)}
+.quotes .opt:active{transform:translateY(3px)}
+.quotes .opt .q{position:absolute;top:-14px;right:16px;width:38px;height:30px}
+
+/* שאלה 7 – דמויות */
+.chars{grid-template-columns:1fr 1fr;gap:12px}
+.chars .opt{flex-direction:column;align-items:stretch;padding:0;overflow:hidden;min-height:0;text-align:center;border-radius:24px}
+.chars .opt .art{background:var(--c);border-bottom:var(--line);aspect-ratio:1/1;display:grid;place-items:center;padding:8px 6px 4px}
+.chars .opt .art img{width:100%;height:100%;object-fit:contain;display:block}
+.chars .opt .nm{font-size:19px;padding:10px 8px 2px;line-height:1.15}
+.chars .opt .ds{font-size:13.5px;line-height:1.4;color:var(--ink-soft);padding:2px 10px 12px}
+.chars .opt.picked .art img{animation:wiggle .6s}
+
+/* שאלה 8 – מד */
+.meter{flex:none;width:54px;height:54px;border:2px solid var(--navy);border-radius:18px;background:#E4F5F3;display:flex;align-items:flex-end;justify-content:center;gap:4px;padding:9px 8px}
+.meter i{width:7px;border-radius:3px;background:#C9D3E3;border:1.5px solid var(--navy)}
+.meter i.on{background:#13968C}
+
+/* מעבר */
+.linking{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:70vh;gap:18px}
+.linking > svg{width:min(300px,82vw);height:auto}
+.linking .ln{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);animation:draw .5s ease-out forwards}
+.linking .nd{transform-box:fill-box;transform-origin:center;opacity:0;animation:popin .35s cubic-bezier(.3,1.6,.5,1) forwards}
+.linking .core{transform-box:fill-box;transform-origin:center;animation:pulse 1s ease-in-out infinite}
+.linking.found .core{animation:boom .5s cubic-bezier(.3,1.6,.5,1) both}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes popin{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:none}}
+@keyframes pulse{50%{transform:scale(1.08)}}
+@keyframes boom{0%{transform:scale(.8)}60%{transform:scale(1.25)}100%{transform:scale(1.1)}}
+.linking .say{font-size:26px;min-height:64px}
+
+/* תוצאות */
+.res-title{font-size:clamp(28px,8vw,36px);line-height:1.12;margin:6px 0 20px}
+.match{background:#fff;border:var(--line);border-radius:30px;box-shadow:0 6px 0 var(--navy);overflow:visible;position:relative;margin-bottom:22px}
+.match .top{background:var(--soft);border-bottom:var(--line);border-radius:27px 27px 0 0;padding:34px 18px 14px;display:grid;place-items:center;position:relative;overflow:hidden}
+.match .top::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(14,37,71,.12) 1.5px,transparent 1.6px);background-size:18px 18px}
+.match .blob{position:relative;width:150px;height:150px;display:grid;place-items:center}
+.match .blob .b{position:absolute;inset:0}
+.match .blob .i{position:relative;width:96px;height:96px}
+.badge{position:absolute;top:-16px;right:14px;z-index:2;background:var(--gold);border:var(--line);border-radius:14px;padding:6px 14px;font-size:19px;transform:rotate(-4deg);box-shadow:0 3px 0 var(--navy)}
+.badge.second{background:#fff;font-size:17px}
+.match .body{padding:18px 20px 22px}
+.match h2{font-size:27px;line-height:1.15;margin-bottom:12px}
+.found-line{display:inline-block;background:var(--soft);border:2px solid var(--navy);border-radius:12px;padding:4px 10px;font-size:15px;margin-bottom:10px}
+.match p{font-size:17.5px;line-height:1.62;color:var(--ink-soft);margin:0 0 14px}
+.eng{font-size:14.5px;color:var(--ink-soft);margin:-4px 0 16px;display:flex;gap:6px;align-items:center}
+.match.two .top{padding:26px 16px 10px}
+.match.two .blob{width:112px;height:112px}
+.match.two .blob .i{width:72px;height:72px}
+.match.two h2{font-size:23px}
+.join.on{background:var(--navy);color:#fff;box-shadow:0 5px 0 var(--gold-deep)}
+.reveal{opacity:0;transform:translateY(26px) rotate(-1.5deg)}
+.reveal.in{opacity:1;transform:none;transition:opacity .5s,transform .6s cubic-bezier(.2,1.3,.4,1)}
+.share-row{display:flex;gap:10px;margin:-4px 0 34px}
+.sec-title{font-size:26px;line-height:1.15;margin:0 0 6px}
+.others{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 36px}
+.ochip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:2px solid var(--navy);border-radius:999px;padding:6px 14px 6px 8px;font-size:16.5px;cursor:pointer;box-shadow:0 3px 0 var(--navy);transition:transform .12s}
+.ochip:active{transform:translateY(2px);box-shadow:0 1px 0 var(--navy)}
+.ochip .dot{width:34px;height:34px;border-radius:50%;background:var(--soft);border:2px solid var(--navy);display:grid;place-items:center}
+.ochip .dot svg{width:24px;height:24px}
+.ochip.sel{background:var(--soft)}
+.cta{background:var(--navy);color:#fff;border-radius:32px;padding:26px 18px 24px;position:relative;margin-top:6px}
+.cta .sec-title{color:#fff}
+.cta .small{color:#C9D3E8;margin:0 0 18px}
+.checks{display:grid;gap:10px;margin-bottom:22px}
+.ck{display:flex;align-items:center;gap:12px;background:#fff;color:var(--navy);border-radius:18px;padding:10px 12px;cursor:pointer;border:2px solid transparent;transition:background .2s,border-color .2s;min-height:60px}
+.ck input{position:absolute;opacity:0;pointer-events:none}
+.ck .box{flex:none;width:28px;height:28px;border:2.5px solid var(--navy);border-radius:9px;display:grid;place-items:center;background:#fff;transition:background .2s}
+.ck .box svg{opacity:0;transform:scale(.4);transition:all .2s cubic-bezier(.3,1.6,.5,1)}
+.ck input:checked ~ .box{background:var(--gold)}
+.ck input:checked ~ .box svg{opacity:1;transform:none}
+.ck input:focus-visible ~ .box{outline:3px dashed var(--gold);outline-offset:3px}
+.ck:has(input:checked){background:var(--sun);border-color:var(--gold)}
+.ck .mini{flex:none;width:36px;height:36px}
+.ck .nm{flex:1;font-size:16.5px;line-height:1.3}
+.ck .tag{flex:none;font-size:12.5px;background:var(--soft);border:1.5px solid var(--navy);border-radius:8px;padding:2px 7px}
+.cta .btn{box-shadow:0 5px 0 var(--gold-deep);border-color:var(--gold-deep)}
+
+/* דף תחתון (sheet) */
+.sheet-bg{position:fixed;inset:0;background:rgba(14,37,71,.45);z-index:40;opacity:0;transition:opacity .25s}
+.sheet-bg.on{opacity:1}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:41;max-width:520px;margin:0 auto;background:#fff;border:var(--line);border-bottom:0;border-radius:30px 30px 0 0;padding:14px 20px calc(24px + env(safe-area-inset-bottom,0px));transform:translateY(100%);transition:transform .35s cubic-bezier(.2,1,.3,1);max-height:85vh;overflow:auto}
+.sheet.on{transform:none}
+.sheet .grab{width:48px;height:5px;border-radius:9px;background:#C9D3E3;margin:0 auto 14px}
+.sheet .hd{display:flex;gap:14px;align-items:center;margin-bottom:12px}
+.sheet .hd .dot{flex:none;width:72px;height:72px;border-radius:24px 30px 22px 32px;background:var(--soft);border:var(--line);display:grid;place-items:center}
+.sheet .hd .dot svg{width:50px;height:50px}
+.sheet p{font-size:17.5px;line-height:1.6;color:var(--ink-soft);margin:0 0 18px}
+
+/* הצלחה */
+.done{text-align:center;padding-top:20px}
+.done .heart{width:200px;margin:0 auto 6px;display:block}
+.done .heart .hb{transform-box:fill-box;transform-origin:center;animation:beat 1.6s ease-in-out infinite}
+.done .heart .ray{stroke-dasharray:14;stroke-dashoffset:14;animation:draw .5s .2s ease-out forwards}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.1)}30%{transform:scale(.97)}45%{transform:scale(1.06)}}
+.done .lead{max-width:340px;margin:10px auto 22px}
+.done .picked-list{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0 0 26px}
+.done .stack{display:grid;gap:12px;max-width:380px;margin:0 auto}
+
+/* המשך */
+.resume{text-align:center;padding-top:10vh}
+.resume .wave{font-size:64px;display:inline-block;animation:wave 1.6s ease-in-out 2}
+@keyframes wave{20%{transform:rotate(-16deg)}40%{transform:rotate(12deg)}60%{transform:rotate(-8deg)}}
+.resume .stack{display:grid;gap:12px;margin-top:26px}
+
+.toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));transform:translate(-50%,180%);visibility:hidden;background:var(--navy);color:#fff;border-radius:999px;padding:12px 20px;font-size:16px;z-index:60;transition:transform .3s cubic-bezier(.2,1.2,.4,1),visibility .3s;white-space:nowrap;box-shadow:0 4px 0 var(--gold-deep)}
+.toast.on{transform:translate(-50%,0);visibility:visible}
+.demo{margin:28px auto 0;max-width:480px;background:#fff;border:2px dashed var(--navy);border-radius:14px;padding:6px 12px;font-size:13px;text-align:center;opacity:.92}
+canvas.confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
+
+/* איור פתיחה */
+.hero .fig{transform-box:fill-box;transform-origin:50% 100%;animation:bob 3.4s ease-in-out infinite}
+.hero .balloons{transform-box:fill-box;transform-origin:50% 100%;animation:sway 4s ease-in-out infinite}
+.hero .spark{transform-box:fill-box;transform-origin:center;animation:twinkle 2.4s ease-in-out infinite}
+.hero .spark:nth-of-type(2n){animation-delay:-1.2s}
+@keyframes bob{50%{transform:translateY(-4px)}}
+@keyframes sway{50%{transform:rotate(-5deg)}}
+@keyframes twinkle{50%{transform:scale(.6);opacity:.5}}
+
+/* לוגו, בס"ד, הגדרות */
+.bsd{font-size:13px;line-height:1;padding:4px 2px 0;text-align:right}
+.tb-left{display:flex;align-items:center;gap:10px}
+.gear{width:40px;height:40px;border-radius:50%;border:2px solid var(--navy);background:#fff;display:grid;place-items:center;cursor:pointer;box-shadow:0 2px 0 var(--navy);padding:0}
+.gear[hidden]{display:none}
+.gear svg{transition:transform .6s}
+.gear:hover svg{transform:rotate(90deg)}
+.boot{display:grid;place-items:center;min-height:60vh}
+.boot img{height:auto;animation:pulse 1.2s ease-in-out infinite}
+.w-logo{margin:34px auto 6px;text-align:center}
+.w-logo img{width:140px;height:auto}
+.cta{overflow:hidden}
+.cta > *:not(.cta-mark){position:relative}
+.cta-mark{position:absolute;left:-26px;top:-18px;width:130px;opacity:.14;pointer-events:none}
+.done-logo{display:block;width:120px;height:auto;margin:36px auto 0}
+.modal-bg{position:fixed;inset:0;background:rgba(14,37,71,.5);z-index:80;display:grid;place-items:center;padding:20px}
+.modal{background:#fff;border:var(--line);border-radius:26px;box-shadow:0 6px 0 var(--navy);padding:24px 20px 12px;width:min(360px,100%);text-align:center}
+.modal .small{margin:6px 0 0}
+.modal input{width:100%;height:56px;border:var(--line);border-radius:14px;font-size:22px;text-align:center;margin:14px 0 4px;letter-spacing:.2em;outline:none}
+.modal .err{margin:4px 0 8px}
+.ed{position:fixed;inset:0;z-index:75;background:var(--sun);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px)}
+.ed-head{display:flex;align-items:center;justify-content:space-between;background:var(--navy);color:#fff;padding:10px 18px}
+.ed-head h2{font-size:22px}
+.ed-x{background:none;border:0;color:#fff;font-size:24px;cursor:pointer;width:44px;height:44px}
+.ed-tabs{display:flex;gap:8px;padding:12px 16px;overflow-x:auto;max-width:820px;width:100%;margin:0 auto}
+.ed-tabs button{border:2px solid var(--navy);background:#fff;border-radius:999px;padding:8px 16px;font-size:16px;cursor:pointer;white-space:nowrap}
+.ed-tabs button[aria-selected="true"]{background:var(--navy);color:#fff}
+.ed-body{flex:1;overflow:auto;padding:4px 16px 24px;max-width:820px;width:100%;margin:0 auto}
+.ed-foot{background:#fff;border-top:var(--line);padding:10px 16px calc(12px + env(safe-area-inset-bottom,0px))}
+.ed-actions{display:flex;gap:10px;max-width:820px;margin:0 auto}
+.ed-actions .btn{flex:1;font-size:17px}
+.ed-actions .btn.white{flex:0 0 auto;font-size:14.5px;padding:8px 14px}
+.ed-foot .err{max-width:820px;margin:0 auto 6px;min-height:0}
+.ed-note{font-size:14.5px;color:var(--ink-soft);line-height:1.5;margin:4px 0 14px}
+.ed-row{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+.ed-in,.ed-f input:not([type="color"]),.ed-f textarea{width:100%;border:2px solid var(--navy);border-radius:12px;background:#fff;font-size:16px;padding:10px 12px}
+.ed-f textarea{resize:vertical;line-height:1.5}
+.mini-b{flex:none;width:38px;height:38px;border:2px solid var(--navy);border-radius:10px;background:#fff;cursor:pointer;font-size:13px;padding:0}
+.mini-b[disabled]{opacity:.3;cursor:default}
+.add{margin-top:8px;width:auto;display:inline-flex}
+.ed-card{background:#fff;border:2px solid var(--navy);border-inline-start:8px solid var(--c,var(--navy));border-radius:18px;margin-bottom:12px;padding:0 14px}
+.ed-card[open]{padding-bottom:14px}
+.ed-card summary{display:flex;align-items:center;gap:10px;padding:10px 0;cursor:pointer;list-style:none}
+.ed-card summary::-webkit-details-marker{display:none}
+.ed-ic{flex:none;width:40px;height:40px}
+.ed-ic svg{width:100%;height:100%;display:block}
+.ed-sum{flex:1;font-size:17px;line-height:1.25}
+.ed-arr{display:flex;gap:6px}
+.ed-num{flex:none;width:32px;height:32px;border-radius:50%;background:var(--gold);border:2px solid var(--navy);display:grid;place-items:center}
+.ed-f{display:block;margin:10px 0 0}
+.ed-f > span{display:block;font-size:14px;margin-bottom:4px;color:var(--ink-soft)}
+.ed-f input[type="color"]{width:64px;height:44px;border:2px solid var(--navy);border-radius:10px;padding:2px;background:#fff}
+.ed-two{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start}
+.ed-icons{display:flex;flex-wrap:wrap;gap:6px}
+.ed-icons button{width:44px;height:44px;border:2px solid #C9D3E3;border-radius:12px;background:#fff;padding:4px;cursor:pointer}
+.ed-icons button svg{width:100%;height:100%;display:block}
+.ed-icons button[aria-pressed="true"]{border-color:var(--navy);background:var(--sun);box-shadow:0 0 0 2px var(--gold)}
+.ed-del{color:#B3261E;margin-top:10px;padding:6px 0}
+.ed-opt{border-top:1.5px dashed #C9D3E3;margin-top:14px;padding-top:10px}
+.ed-optt{font-size:15px}
+.ed-scores{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin-top:10px}
+.ed-sc{display:flex;align-items:center;gap:6px;border:1.5px solid var(--navy);border-inline-start:6px solid var(--c);border-radius:10px;padding:4px 8px 4px 4px;background:#FAFBFF;font-size:13px;justify-content:space-between;line-height:1.2}
+.ed-sc.on{background:var(--sun)}
+.ed-sc.on input{background:var(--gold-2)}
+.ed-sc input{width:50px;height:34px;border:1.5px solid var(--navy);border-radius:8px;text-align:center;font-size:16px}
+
+@media (min-width:700px){
+  .app{padding-top:28px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .linking .ln{stroke-dashoffset:0}
+  .linking .nd{opacity:1}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="deco" aria-hidden="true">
+  <svg class="d1" viewBox="0 0 200 200"><path d="M41.6-38.8C57.4-28.4 75.8-18.8 82.7-3.4 89.6 12 85 33.2 72 47.4 59 61.6 37.7 68.8 16.7 73.6-4.3 78.4-25 80.8-42.4 73-59.8 65.2-73.9 47.2-79.5 27.1-85.1 7-82.2-15.2-71.3-31.8-60.4-48.4-41.5-59.4-23.1-67.1-4.7-74.8 13.2-79.2 26.9-71.6 40.6-64 50.1-44.4 41.6-38.8Z" transform="translate(100 100)" fill="#F2C14E" opacity=".55"/></svg>
+  <svg class="d2" viewBox="0 0 200 200"><path d="M47.7-58.3C61.2-45.3 70.6-29.3 74.6-11.5 78.6 6.3 77.2 25.9 67.7 41.1 58.2 56.3 40.6 67.1 21.4 73.3 2.2 79.5-18.6 81.1-36.3 73.6-54 66.1-68.6 49.5-75.6 30.4-82.6 11.3-82 -10.3-73.5-27.7-65-45.1-48.6-58.3-31.4-70-14.2-81.7 3.8-91.9 19.6-88.4 35.4-84.9 34.2-71.3 47.7-58.3Z" transform="translate(100 100)" fill="#F7B9CB" opacity=".45"/></svg>
+  <svg class="d3" viewBox="0 0 100 100"><g fill="#0E2547" opacity=".16"><circle cx="10" cy="10" r="3"/><circle cx="30" cy="10" r="3"/><circle cx="50" cy="10" r="3"/><circle cx="10" cy="30" r="3"/><circle cx="30" cy="30" r="3"/><circle cx="50" cy="30" r="3"/><circle cx="10" cy="50" r="3"/><circle cx="30" cy="50" r="3"/><circle cx="50" cy="50" r="3"/><circle cx="10" cy="70" r="3"/><circle cx="30" cy="70" r="3"/><circle cx="50" cy="70" r="3"/></g></svg>
+</div>
+
+<div class="app">
+  <div class="bsd" id="bsd" hidden>בס"ד</div>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="ארץ הצבי במורשת – לאתר בית הספר">
+      <img src="img/logo-mark.webp" alt="" width="30" height="40">
+      <span>ארץ הצבי במורשת</span>
+    </a>
+    <div class="tb-left">
+      <div class="save" id="save" role="status" aria-live="polite"><i></i><span></span></div>
+      <button class="gear" id="gear" hidden aria-label="הגדרות השאלון"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.3 2h3.4l.5 2.6 1.9.8 2.2-1.5 2.4 2.4-1.5 2.2.8 1.9 2.6.5v3.4l-2.6.5-.8 1.9 1.5 2.2-2.4 2.4-2.2-1.5-1.9.8-.5 2.6h-3.4l-.5-2.6-1.9-.8-2.2 1.5-2.4-2.4 1.5-2.2-.8-1.9L2 13.7v-3.4l2.6-.5.8-1.9-1.5-2.2 2.4-2.4 2.2 1.5 1.9-.8z" fill="#F2C14E" stroke="#0E2547" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="12" r="3.2" fill="#fff" stroke="#0E2547" stroke-width="1.6"/></svg></button>
+    </div>
+  </header>
+  <main id="stage" aria-live="polite"></main>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/* =========================================================
+   כתובת השרת (Google Apps Script Web App)
+   ========================================================= */
+const API_URL = 'https://script.google.com/macros/s/AKfycbyX7EwMGVBKn6qnca-quhkR4xAoWW0Hmp1DVF-Vg1Rkcy0toeXXkHSVywOJOuspY3zbRA/exec';
+
+/* ========================================================= */
+const LS_KEY = 'hatzvi-quiz-v1';
+const CFG_KEY = 'hatzvi-quiz-config';
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const N = '#0E2547';
+const $ = (s, el = document) => el.querySelector(s);
+const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const wait = ms => new Promise(r => setTimeout(r, RM ? Math.min(ms, 120) : ms));
+const clone = o => JSON.parse(JSON.stringify(o));
+const HEB = {a:'א', b:'ב', c:'ג', d:'ד'};
+function softOf(hex) {
+  const m = /^#?([0-9a-f]{6})$/i.exec(hex || ''); if (!m) return '#EEF1F7';
+  const n = parseInt(m[1], 16), mix = c => Math.round(c + (255 - c) * .84);
+  return `rgb(${mix(n >> 16)},${mix((n >> 8) & 255)},${mix(n & 255)})`;
+}
+
+/* ---------- אייקונים ---------- */
+const ICON = {
+  talan: c => `<path d="M8 46c8-5 16-5 24 0 8-5 16-5 24 0v10c-8-5-16-5-24 0-8-5-16-5-24 0z" fill="#fff" stroke="${N}" stroke-width="3" stroke-linejoin="round"/><path d="M32 46v10" stroke="${N}" stroke-width="3"/><circle cx="32" cy="21" r="11" fill="${c}" stroke="${N}" stroke-width="3"/><rect x="27" y="31" width="10" height="8" rx="2" fill="#fff" stroke="${N}" stroke-width="3"/><path d="M32 3v3M16 9l2.5 2.5M48 9l-2.5 2.5M11 21h3M50 21h3" stroke="${N}" stroke-width="3" stroke-linecap="round"/><path d="M27.5 20q4.5-5 9 0" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/>`,
+  books: c => `<rect x="10" y="42" width="44" height="12" rx="3" fill="${c}" stroke="${N}" stroke-width="3"/><rect x="14" y="30" width="38" height="12" rx="3" fill="#F2C14E" stroke="${N}" stroke-width="3"/><rect x="8" y="18" width="40" height="12" rx="3" fill="#fff" stroke="${N}" stroke-width="3"/><path d="M16 48h20M20 36h18M14 24h16" stroke="${N}" stroke-width="2.5" stroke-linecap="round" opacity=".5"/><path d="M40 8v14l4-3 4 3V8z" fill="${c}" stroke="${N}" stroke-width="2.5" stroke-linejoin="round"/>`,
+  marketing: c => `<path d="M14 26h7l23-13v38L21 38h-7z" fill="${c}" stroke="${N}" stroke-width="3" stroke-linejoin="round"/><rect x="7" y="25" width="9" height="14" rx="3" fill="#fff" stroke="${N}" stroke-width="3"/><path d="M17 38l4 14h7l-3-14" fill="#fff" stroke="${N}" stroke-width="3" stroke-linejoin="round"/><path d="M50 25q5 7 0 14M55 19q9 13 0 26" stroke="${N}" stroke-width="3" fill="none" stroke-linecap="round"/>`,
+  inclusion: c => `<path d="M32 55C14 44 7 35 7 25.5c0-8 6-13.5 12.5-13.5 5.3 0 9.2 3.2 12.5 7.5C35.3 15.2 39.2 12 44.5 12 51 12 57 17.5 57 25.5 57 35 50 44 32 55z" fill="${c}" stroke="${N}" stroke-width="3" stroke-linejoin="round"/><path d="M32 21v7q0 4 4 4h4q4 0 4 4v3" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M52 3l1.7 3.6L57.5 8l-3.8 1.6L52 13l-1.7-3.4L46.5 8l3.8-1.4z" fill="#F2C14E" stroke="${N}" stroke-width="2" stroke-linejoin="round"/>`,
+  afterschool: c => `<path d="M14 46a18 18 0 0 1 36 0z" fill="${c}" stroke="${N}" stroke-width="3" stroke-linejoin="round"/><path d="M6 46h52" stroke="${N}" stroke-width="3" stroke-linecap="round"/><path d="M32 46V35M32 46l7-5" stroke="#fff" stroke-width="3" stroke-linecap="round"/><path d="M32 13v6M15 21l4 4M49 21l-4 4M6 36h5M53 36h5" stroke="${N}" stroke-width="3" stroke-linecap="round"/><path d="M16 54h32" stroke="${N}" stroke-width="3" stroke-linecap="round" opacity=".35"/>`,
+  finance: c => `<path d="M10 36q-6-1-4-7" stroke="${N}" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M19 28l1-9 8 5" fill="${c}" stroke="${N}" stroke-width="3" stroke-linejoin="round"/><ellipse cx="30" cy="38" rx="20" ry="14" fill="${c}" stroke="${N}" stroke-width="3"/><rect x="47" y="33" width="9" height="9" rx="3" fill="#fff" stroke="${N}" stroke-width="3"/><circle cx="40" cy="33" r="2.2" fill="${N}"/><path d="M21 50v6M37 50v6" stroke="${N}" stroke-width="4" stroke-linecap="round"/><path d="M25 27h9" stroke="#fff" stroke-width="3" stroke-linecap="round"/><circle cx="30" cy="11" r="8" fill="#F2C14E" stroke="${N}" stroke-width="3"/><path d="M27 8v5.5h3.5V8M33.5 7v6.5" stroke="${N}" stroke-width="1.8" fill="none" stroke-linecap="round"/>`,
+  infra: c => `<path d="M32 5l20 7v15c0 13-8.5 22-20 29C20.5 49 12 40 12 27V12z" fill="${c}" stroke="${N}" stroke-width="3" stroke-linejoin="round"/><path d="M39 19a7.5 7.5 0 0 0-9.2 9.4L21 37.2l5 5 8.8-8.8a7.5 7.5 0 0 0 9.4-9.2l-4.6 4.6-4.4-1-1-4.4z" fill="#fff" stroke="${N}" stroke-width="2.5" stroke-linejoin="round"/>`,
+  events: c => `<path d="M3 10q29 12 58 0" stroke="${N}" stroke-width="2.5" fill="none"/><path d="M9 13l5 9 4-8z" fill="#F2C14E" stroke="${N}" stroke-width="2" stroke-linejoin="round"/><path d="M27 15.5l4 9 4-9z" fill="#fff" stroke="${N}" stroke-width="2" stroke-linejoin="round"/><path d="M44 14.5l4.5 8.5 4-9.5z" fill="${c}" stroke="${N}" stroke-width="2" stroke-linejoin="round"/><ellipse cx="32" cy="40" rx="12" ry="13.5" fill="${c}" stroke="${N}" stroke-width="3"/><path d="M30 53.5h4l-2 3z" fill="${c}" stroke="${N}" stroke-width="2" stroke-linejoin="round"/><path d="M32 57q-4 3 0 6" stroke="${N}" stroke-width="2" fill="none"/><path d="M27 35q2-4 6-4" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/><circle cx="12" cy="40" r="2.5" fill="#F2C14E"/><circle cx="53" cy="34" r="2.5" fill="${N}"/><path d="M50 48l3 3M53 48l-3 3" stroke="${N}" stroke-width="2" stroke-linecap="round"/>`,
+  community: c => `<path d="M17 21L47 21M17 21L32 46M47 21L32 46" stroke="${N}" stroke-width="3" stroke-dasharray="4 4"/><circle cx="17" cy="21" r="10" fill="${c}" stroke="${N}" stroke-width="3"/><circle cx="47" cy="21" r="10" fill="#fff" stroke="${N}" stroke-width="3"/><circle cx="32" cy="48" r="10" fill="#F2C14E" stroke="${N}" stroke-width="3"/><path d="M32 36c-4-2.5-5.5-4.5-5.5-6.5 0-1.8 1.4-3 2.9-3 1.1 0 2 .6 2.6 1.5.6-.9 1.5-1.5 2.6-1.5 1.5 0 2.9 1.2 2.9 3 0 2-1.5 4-5.5 6.5z" fill="#E2468F" stroke="${N}" stroke-width="1.6"/>`,
+  gifts: c => `<rect x="12" y="30" width="40" height="26" rx="3" fill="${c}" stroke="${N}" stroke-width="3"/><rect x="9" y="22" width="46" height="10" rx="3" fill="#fff" stroke="${N}" stroke-width="3"/><rect x="28" y="22" width="8" height="34" fill="#F2C14E" stroke="${N}" stroke-width="3"/><path d="M32 22c-6-12-19-9-13 0zM32 22c6-12 19-9 13 0z" fill="#F2C14E" stroke="${N}" stroke-width="3" stroke-linejoin="round"/>`
+};
+const iconRaw = (key, color, cls = '') => `<svg class="${cls}" viewBox="0 0 64 64" aria-hidden="true">${(ICON[key] || ICON.community)(color)}</svg>`;
+const icon = (id, cls = '') => { const c = CL[id] || { icon:'community', color:'#9AA6C2' }; return iconRaw(c.icon, c.color, cls); };
+
+/* ---------- ברירות מחדל (אפשר לשנות מתוך מסך ההגדרות) ---------- */
+const DEFAULT_CLASSES = ['א׳1','א׳2','ב׳1','ב׳2','ג׳1','ג׳2','ד׳1','ד׳2','ה׳1','ה׳2','ו׳1'];
+const DEFAULT_CLUSTERS = [
+  { id:'talan', icon:'talan', name:'אשכול תל"ן וחוגים', short:'תל"ן וחוגים', color:'#6A5AE0',
+    desc:'קידום תוכניות לימוד והעשרה, בחינת מענים חדשים והתאמתם לצורכי הילדים ולדרישות משרד החינוך והעירייה.',
+    fit:'הסקרנות שלכם לגבי מה ואיך הילדים לומדים יכולה לייצר כאן שינוי אמיתי: לבחון תוכניות, להציע רעיונות חדשים ולהפוך את יום הלימודים לעשיר ומעניין יותר.' },
+  { id:'books', icon:'books', name:'אשכול השאלת ספרים', short:'השאלת ספרים', color:'#13968C',
+    desc:'שיפור מערך השאלת ספרי הלימוד ויצירת תהליך פשוט, יעיל וכלכלי יותר עבור המשפחות.',
+    fit:'יש לכם עין לתהליכים ואהבה לסדר, וזה בדיוק מה שהופך את השאלת הספרים מכאב ראש של סוף שנה לתהליך חלק שחוסך למשפחות כסף וזמן.' },
+  { id:'marketing', icon:'marketing', name:'אשכול שיווק ודוברות', short:'שיווק ודוברות', color:'#EE5A4F',
+    desc:'שיתוף הפעילות והייחודיות של "ארץ הצבי", שיפור התקשורת עם ההורים וקידום בית הספר בקהילה.',
+    fit:'מילים, רעיונות ותמונות טובות הם הכוח שלכם. כאן אפשר לספר את הסיפור של ארץ הצבי כמו שמגיע לו, ולשפר את הדרך שבה הורים שומעים על כל מה שקורה.' },
+  { id:'inclusion', icon:'inclusion', name:'אשכול שילוב, חינוך מיוחד, ילדים מחוננים וזכויות הורים', short:'שילוב וזכויות', color:'#1E9ED6',
+    desc:'קידום שילוב והכלה, ליווי משפחות, מתן מידע על זכויות ועבודה מול גורמי העירייה ומערכת החינוך.',
+    fit:'יש לכם רגישות לאנשים ויכולת להקשיב באמת. באשכול הזה הכישרון הזה הופך לליווי משפחות, לידע על זכויות ולבית ספר שבו כל ילד וילדה מרגישים שייכים.' },
+  { id:'afterschool', icon:'afterschool', name:'אשכול צהרון', short:'צהרון', color:'#F28A1C',
+    desc:'חיזוק הקשר בין בית הספר, הצהרון וההורים, קידום רצף חינוכי וטיפול בנושאים החשובים לילדים ולהורים בשעות הצהריים.',
+    fit:'חשוב לכם מה הילדים פוגשים ביום-יום, ובעיות מעשיות לא מרתיעות אתכם. האשכול הזה מחבר בין הבוקר לצהריים ודואג שגם השעות האלה ירגישו טוב.' },
+  { id:'finance', icon:'finance', name:'אשכול כספים', short:'כספים', color:'#3FA35B',
+    desc:'ניהול מסודר ושקוף של כספי ההורים, בניית תקציב, ליווי פעילויות ובחינת אפשרויות לגיוס משאבים.',
+    fit:'מספרים לא מפחידים אתכם, ואולי אפילו קצת משמחים. כאן תוכלו לדאוג שכספי ההורים ינוהלו בשקיפות ובחוכמה, ושלכל פעילות טובה יהיה תקציב שמחזיק אותה.' },
+  { id:'infra', icon:'infra', name:'אשכול תשתיות, ניקיון, ביטחון ובטיחות', short:'תשתיות ובטיחות', color:'#C0603A',
+    desc:'שיפור סביבת בית הספר, קידום בטיחות וביטחון, טיפול במפגעים, תחזוקה ומעקב אחר רמת הניקיון.',
+    fit:'אתם רואים את מה שאחרים עוברים לידו, ובדרך כלל כבר יש לכם רעיון איך לתקן. האשכול הזה הופך את החצר והכיתות למקום בטוח, נקי ונעים יותר לכולם.' },
+  { id:'events', icon:'events', name:'אשכול אירועים', short:'אירועים', color:'#E2468F',
+    desc:'סיוע לצוות בית הספר בתכנון, הפקה וניהול של אירועים כלל-בית-ספריים.',
+    fit:'יש לכם את השילוב הנדיר של רעיון ועשייה: לראות חגיגה בעיניים ולהביא אותה לחיים. באשכול האירועים תעזרו לצוות להפיק רגעים שהילדים יזכרו שנים.' },
+  { id:'community', icon:'community', name:'ועדת מעורבות קהילתית', short:'מעורבות קהילתית', color:'#D99A00',
+    desc:'חיבור בין בית הספר לקהילה באמצעות יוזמות, שיתופי פעולה ופעילויות משותפות.',
+    fit:'נראה שאתם מסוג האנשים שאוהבים לחבר בין אנשים ולהפוך רעיון למשהו שקורה באמת. ועדת המעורבות הקהילתית יכולה להיות בדיוק המקום שבו הכישרון הזה הופך לעשייה.' },
+  { id:'gifts', icon:'gifts', name:'ועדת מתנות ויום המורה', short:'מתנות ויום המורה', color:'#A14FD0',
+    desc:'הוקרה, גיבוש ושמירה על קשר חם עם צוות בית הספר לאורך השנה.',
+    fit:'אתם יודעים לשמח אנשים ולמצוא את המחווה הקטנה שעושה הבדל גדול. בוועדה הזאת תעזרו לצוות להרגיש מוערך, ולקהילה להרגיש כמו משפחה.' }
+];
+const DEFAULT_Q = [
+  { title:'מה ה"סופר-כוח" שלך?', acc:'#E8AE2E', soft:'#FFF0C7', opts:[
+    {k:'a', e:'🤝', t:'אני מכיר/ה אנשים ויודע/ת לחבר ביניהם', s:{community:3, events:2, gifts:2}},
+    {k:'b', e:'🔍', t:'אני שם/ה לב לדברים שאחרים מפספסים', s:{infra:3, inclusion:2, afterschool:2}},
+    {k:'c', e:'💡', t:'אני טוב/ה בקריאייטיב, ניסוח ורעיונות', s:{marketing:3, events:2, talan:2}},
+    {k:'d', e:'📋', t:'אני אלוף/ה בארגון ולגרום לדברים לקרות', s:{finance:3, books:3, infra:2}} ]},
+  { title:'קיבלת שעה פנויה לטובת בית הספר. איפה הכי כיף לך להשקיע אותה?', acc:'#5AA6E8', soft:'#DDEDFB', opts:[
+    {k:'a', e:'🎉', t:'להרים פעילות שתעשה שמח לילדים ולהורים', s:{events:3, community:3, gifts:2}},
+    {k:'b', e:'🎒', t:'לשפר משהו שהילדים פוגשים בכל יום', s:{afterschool:3, infra:2, inclusion:2}},
+    {k:'c', e:'🧩', t:'לעבוד על רעיון, תוכנית או פתרון חדש', s:{talan:3, marketing:2, inclusion:1}},
+    {k:'d', e:'🗂️', t:'לעשות סדר בתקציב, תהליך או מערכת מבולגנת', s:{finance:3, books:3, infra:2}} ]},
+  { title:'איזו הודעה בוואטסאפ תגרום לך להגיב מיד?', type:'chat', acc:'#3FA35B', soft:'#DDF3E2', opts:[
+    {k:'a', who:'הנהגת ההורים', wc:'#E2468F', time:'20:41', t:'"מחפשים רעיון לאירוע קהילתי חדש"', s:{events:3, community:3, gifts:1}},
+    {k:'b', who:'הורי השכבה', wc:'#F28A1C', time:'20:43', t:'"יש בעיה בצהרון וצריך פתרון"', s:{afterschool:3, talan:1}},
+    {k:'c', who:'ועד ההורים', wc:'#6A5AE0', time:'20:47', t:'"איך מספרים טוב יותר על בית הספר?"', s:{marketing:3, community:1}},
+    {k:'d', who:'הורים מהשכונה', wc:'#C0603A', time:'20:52', t:'"צריך לטפל בנושא בטיחותי או תשתיתי"', s:{infra:3, afterschool:1}} ]},
+  { title:'אם היית יכול/ה לשפר דבר אחד כבר מחר בבוקר, מה היית בוחר/ת?', acc:'#E2468F', soft:'#FCDDEB', opts:[
+    {k:'a', e:'💞', t:'יותר חיבור בין המשפחות והקהילה', s:{community:3, events:2, gifts:2}},
+    {k:'b', e:'📚', t:'יום לימודים והעשרה טובים יותר', s:{talan:3, afterschool:2, inclusion:2}},
+    {k:'c', e:'🛡️', t:'סביבת בית ספר נעימה ובטוחה יותר', s:{infra:3, books:1}},
+    {k:'d', e:'📣', t:'תקשורת טובה וברורה יותר עם ההורים', s:{marketing:3, community:2}} ]},
+  { title:'איזה משפט הכי דומה לך?', type:'quotes', acc:'#8E7BEA', soft:'#ECE8FF', opts:[
+    {k:'a', t:'תנו לי אנשים טובים ונרים משהו יחד', s:{community:3, events:3, gifts:2}},
+    {k:'b', t:'רגע, בואו נבדוק מה באמת צריך', s:{inclusion:3, afterschool:2, talan:2}},
+    {k:'c', t:'יש לי רעיון איך לעשות את זה יותר טוב', s:{marketing:3, talan:2, events:2}},
+    {k:'d', t:'מי אחראי על זה? בואו נסגור את זה', s:{infra:3, finance:3, books:2}} ]},
+  { title:'באיזו משימה דווקא היית נהנה/ית להתנדב?', acc:'#F28A1C', soft:'#FFE8D1', opts:[
+    {k:'a', e:'🎈', t:'אירוע, חגיגה או פעילות קהילתית', s:{events:4, community:3, gifts:2}},
+    {k:'b', e:'💙', t:'נושא שקשור לילדים, שילוב וזכויות', s:{inclusion:4, community:1}},
+    {k:'c', e:'🎨', t:'חוגים, צהרון או תוכניות העשרה', s:{talan:4, afterschool:4}},
+    {k:'d', e:'🧮', t:'תקציב, ציוד, ספרים או תהליך שצריך סדר', s:{finance:3, books:3, infra:3}} ]},
+  { title:'אילו היית דמות מוכרת, מי היית?', type:'chars', acc:'#E8AE2E', soft:'#FFF0C7', opts:[
+    {k:'a', name:'הדוב פדינגטון', img:'char-warm.webp', c:'#FFE6D6', t:'חברותי, טוב לב, קהילתי, תמיד מנסה לעזור.', s:{community:3, gifts:3, inclusion:2}},
+    {k:'b', name:'מקגייוור', img:'char-fix.webp', c:'#E3ECD5', t:'רואה בעיה ומיד מתחיל לחשוב איך פותרים אותה.', s:{infra:3, afterschool:2, books:2}},
+    {k:'c', name:'ראמזי מ"קופה ראשית"', img:'char-order.webp', c:'#FBE0DC', t:'הכול חייב להיות מסודר, יעיל ומתוקתק.', s:{finance:3, books:3, infra:2}},
+    {k:'d', name:'מרי פופינס', img:'char-magic.webp', c:'#DCE4F5', t:'הופכת כל משימה לחוויה, עם יצירתיות וקצת קסם.', s:{events:3, talan:2, marketing:2, gifts:1}} ]},
+  { title:'וכמה מעורבות מתאימה לך כרגע?', type:'meter', sub:'אין פה תשובה נכונה. זה רק עוזר לנו לפנות אליכם נכון.', acc:'#13968C', soft:'#D8F2EF', opts:[
+    {k:'a', v:'occasional', t:'משימה קטנה מדי פעם'},
+    {k:'b', v:'project', t:'פרויקט נקודתי נשמע מצוין'},
+    {k:'c', v:'regular', t:'מתאים לי להיות חלק קבוע מאשכול או ועדה'},
+    {k:'d', v:'leader', t:'אם זה נושא שחשוב לי, אני גם מוכן/ה להוביל'} ]}
+];
+const ENG_TXT = {occasional:'משימה קטנה מדי פעם', project:'פרויקט נקודתי', regular:'חלק קבוע מאשכול או ועדה', leader:'מוכנים להוביל'};
+const TRAIT = { a:'אתם מחברים בין אנשים באופן טבעי', b:'אתם שמים לב לדברים שאחרים מפספסים', c:'אתם מביאים רעיונות וקריאייטיב לכל דבר', d:'אתם יודעים לגרום לדברים לקרות' };
+
+/* ---------- הגדרות מהשרת ---------- */
+let CLASSES = [], CLUSTERS = [], CL = {}, Q = [];
+function cleanScores(s) {
+  const out = {};
+  for (const [k, v] of Object.entries(s || {})) { const n = Math.max(0, Math.min(20, Math.round(+v || 0))); if (n) out[k] = n; }
+  return out;
+}
+function applyConfig(cfg) {
+  cfg = cfg || {};
+  CLASSES = Array.isArray(cfg.classes) && cfg.classes.length ? cfg.classes.map(s => String(s).trim()).filter(Boolean) : [...DEFAULT_CLASSES];
+  const src = Array.isArray(cfg.clusters) && cfg.clusters.length >= 2 ? cfg.clusters : DEFAULT_CLUSTERS;
+  CLUSTERS = src.filter(c => c && c.id).map(c => ({
+    id:String(c.id), icon: ICON[c.icon] ? c.icon : 'community', name:String(c.name || ''), short:String(c.short || c.name || ''),
+    color: /^#[0-9a-f]{6}$/i.test(c.color) ? c.color : '#5B6CE0', desc:String(c.desc || ''), fit:String(c.fit || c.desc || '')
+  }));
+  CLUSTERS.forEach(c => c.soft = softOf(c.color));
+  CL = Object.fromEntries(CLUSTERS.map(c => [c.id, c]));
+  Q = DEFAULT_Q.map((dq, i) => {
+    const cq = (cfg.questions || [])[i] || {};
+    return { ...clone(dq), title: cq.title || dq.title, sub: cq.sub != null ? cq.sub : dq.sub,
+      opts: dq.opts.map(o => {
+        const co = (cq.opts || []).find(x => x && x.k === o.k) || {};
+        const r = { ...clone(o), t: co.t || o.t };
+        if (o.who) r.who = co.who || o.who;
+        if (o.name) r.name = co.name || o.name;
+        if (i < 7) r.s = co.s ? cleanScores(co.s) : clone(o.s);
+        return r;
+      }) };
+  });
+}
+function currentConfig() {
+  return {
+    classes: [...CLASSES],
+    clusters: CLUSTERS.map(({ id, icon, name, short, color, desc, fit }) => ({ id, icon, name, short, color, desc, fit })),
+    questions: Q.map((q, i) => ({ title:q.title, sub:q.sub || '', opts:q.opts.map(o => {
+      const r = { k:o.k, t:o.t }; if (o.who) r.who = o.who; if (o.name) r.name = o.name; if (i < 7) r.s = { ...o.s }; return r; }) }))
+  };
+}
+async function loadConfig() {
+  let cfg = null;
+  try { cfg = JSON.parse(localStorage.getItem(CFG_KEY) || 'null'); } catch (e) {}
+  if (API_URL) {
+    try {
+      const ctrl = new AbortController(); const t = setTimeout(() => ctrl.abort(), 4500);
+      const r = await fetch(`${API_URL}?action=config`, { signal: ctrl.signal }); clearTimeout(t);
+      const j = await r.json();
+      if (j.ok) { cfg = j.config || null; try { cfg ? localStorage.setItem(CFG_KEY, JSON.stringify(cfg)) : localStorage.removeItem(CFG_KEY); } catch (e) {} }
+    } catch (e) {}
+  }
+  applyConfig(cfg);
+}
+applyConfig(null);
+
+/* ---------- מצב ---------- */
+const newId = () => 's_' + (crypto.randomUUID ? crypto.randomUUID().replace(/-/g,'') : (Date.now().toString(36) + Math.random().toString(36).slice(2)));
+function freshState(keep = {}) {
+  const p = new URLSearchParams(location.search);
+  return {
+    id:newId(), stage:'welcome', name:'', classes:[], phone:'', email:'',
+    current_question:0, answers:{}, engagement:'', final1:'', final2:'',
+    draft:[], selected:[], completed:false,
+    started_at:new Date().toISOString(), updated_at:new Date().toISOString(), completed_at:'', joined_at:'',
+    utm:{ source:p.get('utm_source')||'', medium:p.get('utm_medium')||'', campaign:p.get('utm_campaign')||'', content:p.get('utm_content')||'', term:p.get('utm_term')||'' },
+    referrer: document.referrer || '',
+    device: matchMedia('(max-width:760px)').matches ? 'mobile' : 'desktop',
+    ...keep
+  };
+}
+let S = freshState();
+
+/* ---------- ניקוד ---------- */
+function optOf(n) { const k = S.answers['q'+n]; return k ? Q[n-1].opts.find(o => o.k === k) : null; }
+function computeScores() {
+  const sc = Object.fromEntries(CLUSTERS.map(c => [c.id, 0]));
+  for (let n = 1; n <= 7; n++) { const o = optOf(n); if (o) for (const [id, p] of Object.entries(o.s || {})) if (id in sc) sc[id] += p; }
+  return sc;
+}
+function qPts(n, id) { const o = optOf(n); return (o && o.s && o.s[id]) || 0; }
+function ranking() {
+  const sc = computeScores();
+  return CLUSTERS.map((c, i) => ({ id:c.id, i, t:sc[c.id], q6:qPts(6,c.id), q3:qPts(3,c.id), q1:qPts(1,c.id) }))
+    .sort((x, y) => y.t - x.t || y.q6 - x.q6 || y.q3 - x.q3 || y.q1 - x.q1 || x.i - y.i)
+    .map(x => x.id);
+}
+
+/* ---------- שמירה ---------- */
+function answerText(n) {
+  const o = optOf(n); if (!o) return '';
+  return `${HEB[o.k]}. ${o.name ? o.name : o.t.replace(/^"|"$/g,'')}`;
+}
+function record() {
+  const sc = computeScores();
+  const named = Object.fromEntries(CLUSTERS.map(c => [c.short, sc[c.id]]));
+  const nm = id => CL[id] ? CL[id].name : '';
+  const r = {
+    session_id:S.id, stage:S.stage, name:S.name.trim(), classes:S.classes.join(', '),
+    phone:S.phone.trim(), email:S.email.trim(), current_question:S.current_question,
+    engagement:S.engagement, final_match_1:nm(S.final1), final_match_2:nm(S.final2),
+    selected_clusters:S.selected.map(nm).filter(Boolean).join(' | '),
+    cluster_ids:{ f1:S.final1, f2:S.final2, sel:S.selected },
+    completed:S.completed, started_at:S.started_at, completed_at:S.completed_at, joined_at:S.joined_at,
+    answers:S.answers, calculated_scores:named,
+    utm_source:S.utm.source, utm_medium:S.utm.medium, utm_campaign:S.utm.campaign, utm_content:S.utm.content, utm_term:S.utm.term,
+    referrer:S.referrer, device:S.device
+  };
+  for (let n = 1; n <= 8; n++) r['q'+n] = answerText(n);
+  return r;
+}
+function saveLocal() { try { localStorage.setItem(LS_KEY, JSON.stringify(S)); } catch (e) {} }
+
+let saveT = null, retryT = null, inFlight = false, again = false, dirty = false;
+function persist(delay = 700) {
+  S.updated_at = new Date().toISOString();
+  saveLocal(); dirty = true;
+  clearTimeout(saveT);
+  if (!API_URL) return;
+  status('saving');
+  saveT = setTimeout(flush, delay);
+}
+async function flush() {
+  if (!API_URL || !dirty) return;
+  if (inFlight) { again = true; return; }
+  inFlight = true; again = false; dirty = false;
+  try {
+    const res = await fetch(API_URL, { method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify({ action:'save', data:record() }) });
+    const j = await res.json();
+    if (!j.ok) throw new Error(j.error || 'save failed');
+    status('saved');
+  } catch (e) {
+    dirty = true; status('error');
+    clearTimeout(retryT); retryT = setTimeout(flush, 5000);
+  } finally {
+    inFlight = false;
+    if (again) flush();
+  }
+}
+function beacon() {
+  if (!API_URL || !dirty || !navigator.sendBeacon) return;
+  try { navigator.sendBeacon(API_URL, new Blob([JSON.stringify({ action:'save', data:record() })], { type:'text/plain;charset=utf-8' })); dirty = false; } catch (e) {}
+}
+addEventListener('pagehide', beacon);
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') beacon(); });
+
+let statusT;
+function status(kind) {
+  const el = $('#save'); const sp = $('span', el);
+  el.className = 'save show ' + kind;
+  sp.textContent = kind === 'saving' ? 'שומר…' : kind === 'saved' ? 'נשמר' : 'אין חיבור, מנסים שוב';
+  clearTimeout(statusT);
+  if (kind === 'saved') statusT = setTimeout(() => el.classList.remove('show'), 1800);
+}
+
+/* ---------- טעינה וחידוש ---------- */
+function fromServer(row) {
+  const byName = n => (CLUSTERS.find(c => c.name === n) || {}).id || '';
+  let answers = {}, ids = null;
+  try { answers = typeof row.answers === 'object' ? row.answers : JSON.parse(row.answers || '{}'); } catch (e) {}
+  try { ids = typeof row.cluster_ids === 'object' ? row.cluster_ids : JSON.parse(row.cluster_ids || 'null'); } catch (e) {}
+  const done = row.completed === true || String(row.completed).toUpperCase() === 'TRUE';
+  return {
+    stage: row.stage || 'welcome', name: row.name || '',
+    classes: String(row.classes || '').split(',').map(s => s.trim()).filter(Boolean),
+    phone: String(row.phone || '').replace(/^'/,''), email: row.email || '',
+    current_question: +row.current_question || 0, answers, engagement: row.engagement || '',
+    final1: (ids && ids.f1) || byName(row.final_match_1), final2: (ids && ids.f2) || byName(row.final_match_2),
+    selected: (ids && Array.isArray(ids.sel)) ? ids.sel : String(row.selected_clusters || '').split('|').map(s => byName(s.trim())).filter(Boolean),
+    completed: done, completed_at: row.completed_at || '', joined_at: row.joined_at || '',
+    updated_at: row.updated_at || ''
+  };
+}
+async function loadSession() {
+  let local = null;
+  try { local = JSON.parse(localStorage.getItem(LS_KEY) || 'null'); } catch (e) {}
+  if (!(local && local.id)) return false;
+  S = { ...freshState(), ...local, utm: local.utm || freshState().utm };
+  if (API_URL) {
+    try {
+      const res = await fetch(`${API_URL}?action=get&id=${encodeURIComponent(S.id)}`);
+      const j = await res.json();
+      if (j.ok && j.row && new Date(j.row.updated_at) > new Date(S.updated_at || 0)) { Object.assign(S, fromServer(j.row)); saveLocal(); }
+      else if (j.ok && !j.row) persist(0);
+    } catch (e) {}
+  }
+  return true;
+}
+async function boot() {
+  $('#stage').innerHTML = `<div class="boot"><img src="img/logo-mark.webp" alt="" width="90"></div>`;
+  const [, hadSession] = await Promise.all([loadConfig(), loadSession()]);
+  if (!hadSession) { S = freshState(); persist(0); }
+  // ניקוי מזהים של אשכולות שהוסרו
+  S.draft = (S.draft || S.selected || []).filter(id => CL[id]);
+  S.selected = (S.selected || []).filter(id => CL[id]);
+  S.classes = (S.classes || []).filter(c => CLASSES.includes(c));
+  if (S.completed && (!CL[S.final1] || !CL[S.final2] || S.final1 === S.final2)) { const r = ranking(); S.final1 = r[0]; S.final2 = r[1]; }
+  if (!API_URL) {
+    const d = document.createElement('div'); d.className = 'demo';
+    d.textContent = 'מצב תצוגה מקדימה: התשובות נשמרות כרגע רק במכשיר הזה';
+    $('.app').appendChild(d);
+  }
+  const st = S.stage;
+  if (st === 'joined') go('success', 'f', true);
+  else if (S.completed) go('results', 'f', true);
+  else if (st === 'details' || /^q[1-8]$/.test(st)) go('resume');
+  else go('welcome');
+}
+
+/* ---------- ניווט ---------- */
+async function go(screen, dir = 'f', arg) {
+  const stage = $('#stage');
+  const old = stage.firstElementChild;
+  if (old && old.classList.contains('screen') && !RM) { old.classList.add(dir === 'b' ? 'out-b' : 'out-f'); await wait(190); }
+  const el = document.createElement('section');
+  el.className = 'screen' + (dir === 'b' ? ' from-b' : '');
+  stage.replaceChildren(el);
+  window.scrollTo(0, 0);
+  const first = screen === 'welcome';
+  $('#bsd').hidden = !first; $('#gear').hidden = !first;
+  if (screen === 'welcome') renderWelcome(el);
+  else if (screen === 'resume') renderResume(el);
+  else if (screen === 'details') renderDetails(el);
+  else if (/^q\d$/.test(screen)) renderQuestion(el, +screen.slice(1));
+  else if (screen === 'linking') renderLinking(el);
+  else if (screen === 'results') renderResults(el, arg);
+  else if (screen === 'success') renderSuccess(el, arg);
+  const h = el.querySelector('h1,h2');
+  if (h) { h.setAttribute('tabindex', '-1'); h.focus({ preventScroll:true }); }
+}
+
+/* ---------- איור פתיחה ---------- */
+const star = (cx, cy, R, r) => { let d=''; for (let i=0;i<10;i++){ const a=-Math.PI/2+i*Math.PI/5, rr=i%2?r:R; d+=(i?'L':'M')+(cx+rr*Math.cos(a)).toFixed(1)+' '+(cy+rr*Math.sin(a)).toFixed(1);} return d+'Z'; };
+const heartP = (x, y, s=1, fill='#EE5A4F') => `<path transform="translate(${x} ${y}) scale(${s})" d="M0 7C-7 2.5-9-1-9-4.2-9-7.3-6.7-9.5-4-9.5c1.8 0 3.2.9 4 2.3.8-1.4 2.2-2.3 4-2.3 2.7 0 5 2.2 5 5.3C9-1 7 2.5 0 7z" fill="${fill}" stroke="${N}" stroke-width="${2/s}"/>`;
+function person(x, o) {
+  const s = o.skin, h = o.hair;
+  let back = '', front = '';
+  if (o.style === 'long') back = `<path d="M-20 140c-2-18 8-26 20-26s22 8 20 26v18c-5 3-8-6-8-16H-12c0 10-3 19-8 16z" fill="${h}"/>`;
+  if (o.style === 'tichel') back = `<path d="M15 128q12 6 6 26" stroke="${h}" stroke-width="7" stroke-linecap="round" fill="none"/>`;
+  if (o.style === 'short' || o.style === 'kippah' || o.style === 'bun') front = `<path d="M-18 137c-1-15 7-22 18-22s19 7 18 22c-4-7-10-10-18-10s-14 3-18 10z" fill="${h}"/>`;
+  if (o.style === 'long') front = `<path d="M-18 136c-1-14 7-21 18-21s19 7 18 21c-6-6-11-9-18-9 -3 5-10 8-18 9z" fill="${h}"/>`;
+  if (o.style === 'tichel') front = `<path d="M-21 141c-2-18 8-27 21-27s23 9 21 27c-3-8-11-13-21-13s-18 5-21 13z" fill="${h}" stroke="${N}" stroke-width="2"/><circle cx="-8" cy="121" r="1.6" fill="#fff"/><circle cx="4" cy="119" r="1.6" fill="#fff"/><circle cx="12" cy="124" r="1.6" fill="#fff"/><circle cx="18" cy="129" r="5.5" fill="${h}" stroke="${N}" stroke-width="2"/>`;
+  if (o.style === 'kippah') front += `<path d="M-9 121.5Q0 111 9 121.5z" fill="${o.kip}" stroke="${N}" stroke-width="1.8"/>`;
+  if (o.style === 'bun') front += `<circle cx="0" cy="113" r="7.5" fill="${h}"/>`;
+  const glasses = o.glasses ? `<circle cx="-6.5" cy="139" r="5" fill="none" stroke="${N}" stroke-width="1.8"/><circle cx="6.5" cy="139" r="5" fill="none" stroke="${N}" stroke-width="1.8"/><path d="M-1.5 139h3" stroke="${N}" stroke-width="1.8"/>` : '';
+  const arm = d => `<path d="${d}" stroke="${s}" stroke-width="7.5" stroke-linecap="round" fill="none"/>`;
+  return `<g transform="translate(${x} 0)"><g class="fig" style="animation-delay:-${(x/90).toFixed(2)}s">
+    ${back}
+    <path d="M-23 234c-1-40 8-64 23-64s24 24 23 64z" fill="${o.shirt}" stroke="${N}" stroke-width="2.5"/>
+    <rect x="-5" y="152" width="10" height="20" rx="4" fill="${s}"/>
+    <circle cx="0" cy="138" r="18" fill="${s}"/>
+    ${front}
+    <circle cx="-6" cy="139" r="1.9" fill="${N}"/><circle cx="6" cy="139" r="1.9" fill="${N}"/>
+    <path d="M-5 146q5 4 10 0" stroke="${N}" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+    <circle cx="-11" cy="145" r="2.6" fill="#F28B82" opacity=".55"/><circle cx="11" cy="145" r="2.6" fill="#F28B82" opacity=".55"/>
+    ${glasses}
+    ${o.prop(arm)}
+  </g></g>`;
+}
+function heroSVG() {
+  const sp = (x, y, r, c) => `<path class="spark" d="${star(x, y, r, r*.42)}" fill="${c}" stroke="${N}" stroke-width="1.6" stroke-linejoin="round"/>`;
+  return `<svg viewBox="0 0 360 250" role="img" aria-label="איור של הורים שונים: אחת עם בלונים, אחד עם ארגז כלים, אחת עם מחשב, אחד עם ספרים ואחת שמחברת בין אנשים">
+  <circle cx="186" cy="150" r="104" fill="#FFE6A3"/>
+  <circle cx="186" cy="150" r="104" fill="none" stroke="${N}" stroke-width="2" stroke-dasharray="3 7" opacity=".35"/>
+  ${sp(30,40,8,'#fff')}${sp(334,58,9,'#F2C14E')}${sp(300,22,5,'#E2468F')}${sp(70,104,5,'#8CC8F0')}
+  <path d="M0 236Q180 216 360 236V250H0Z" fill="#fff" stroke="${N}" stroke-width="2.5"/>
+  ${person(52, { skin:'#F2C9A0', hair:'#13968C', style:'tichel', shirt:'#EE5A4F', prop: a => `
+     ${a('M-15 182q-6 20-3 32')}
+     <g class="balloons"><path d="M30 128L20 84M30 128L44 96" stroke="${N}" stroke-width="1.5"/>
+     <ellipse cx="18" cy="68" rx="13" ry="16" fill="#F2C14E" stroke="${N}" stroke-width="2.5"/><path d="M16 84h4l-2 3z" fill="#F2C14E" stroke="${N}" stroke-width="1.5"/>
+     <ellipse cx="46" cy="80" rx="11.5" ry="14" fill="#6A5AE0" stroke="${N}" stroke-width="2.5"/><path d="M44 94h4l-2 3z" fill="#6A5AE0" stroke="${N}" stroke-width="1.5"/>
+     <path d="M12 62q2-5 7-6M41 75q2-4 6-5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/></g>
+     ${a('M15 180Q29 166 30 130')}<circle cx="30" cy="129" r="4.6" fill="#F2C9A0"/>` })}
+  ${person(120, { skin:'#C68A5E', hair:'#3B2A20', style:'kippah', kip:'#F2C14E', shirt:'#4F6BD8', prop: a => `
+     ${a('M-15 182q-6 20-3 32')}
+     ${a('M15 182q8 18 9 28')}
+     <path d="M17 208v-6h16v6" fill="none" stroke="${N}" stroke-width="2.6"/>
+     <rect x="10" y="207" width="30" height="22" rx="4" fill="#EE5A4F" stroke="${N}" stroke-width="2.5"/>
+     <path d="M10 215h30" stroke="${N}" stroke-width="2"/><rect x="21.5" y="212" width="7" height="6" rx="1.5" fill="#F2C14E" stroke="${N}" stroke-width="1.6"/>` })}
+  ${person(186, { skin:'#FFD9B8', hair:'#7A3E1D', style:'long', shirt:'#F2C14E', prop: a => `
+     ${a('M-15 184q-6 14 2 18')}${a('M15 184q6 14-2 18')}
+     <rect x="-21" y="180" width="42" height="27" rx="3.5" fill="${N}"/>
+     ${heartP(0, 192, .55, '#F2C14E')}
+     <path d="M-25 207h50l-4 6h-42z" fill="#C9D3E3" stroke="${N}" stroke-width="2.2" stroke-linejoin="round"/>` })}
+  ${person(252, { skin:'#8D5A3B', hair:'#1D1A1A', style:'short', glasses:true, shirt:'#13968C', prop: a => `
+     <rect x="-17" y="203" width="34" height="9" rx="2" fill="#E2468F" stroke="${N}" stroke-width="2.2"/>
+     <rect x="-14" y="194" width="30" height="9" rx="2" fill="#fff" stroke="${N}" stroke-width="2.2"/>
+     <rect x="-18" y="185" width="32" height="9" rx="2" fill="#F2C14E" stroke="${N}" stroke-width="2.2"/>
+     ${a('M-15 182q-8 14-2 26')}${a('M15 182q8 14 2 26')}` })}
+  ${person(318, { skin:'#F0C08F', hair:'#C66B2E', style:'bun', shirt:'#E2468F', prop: a => `
+     ${a('M15 182q-4 20 2 30')}
+     ${a('M-15 180Q-30 168 -30 150')}<circle cx="-30" cy="148" r="4.6" fill="#F0C08F"/>
+     <path d="M-58 88h44a8 8 0 0 1 8 8v16a8 8 0 0 1-8 8h-26l-10 9 2-9h-10a8 8 0 0 1-8-8V96a8 8 0 0 1 8-8z" fill="#fff" stroke="${N}" stroke-width="2.5" stroke-linejoin="round"/>
+     <circle cx="-48" cy="104" r="4.5" fill="#6A5AE0" stroke="${N}" stroke-width="1.6"/><circle cx="-24" cy="104" r="4.5" fill="#13968C" stroke="${N}" stroke-width="1.6"/>
+     <path d="M-43.5 104h15" stroke="${N}" stroke-width="2" stroke-dasharray="2.5 2.5"/>` })}
+  </svg>`;
+}
+
+/* ---------- מסך פתיחה ---------- */
+function renderWelcome(el) {
+  el.className += ' welcome';
+  el.innerHTML = `
+    <div class="hero">${heroSVG()}</div>
+    <div class="title-wrap">
+      <h1 class="h-xl">איזה הורה<br>פעיל את/ה?</h1>
+      <svg class="swoosh" viewBox="0 0 300 18" preserveAspectRatio="none" aria-hidden="true"><path d="M4 12C70 3 150 2 296 9" stroke="#E8AE2E" stroke-width="7" fill="none" stroke-linecap="round"/></svg>
+    </div>
+    <p class="lead">לכל אחד ואחת יש דרך אחרת לתרום לבית הספר: יש מי שמחברים בין אנשים, מי שמוצאים פתרונות, מי שמביאים רעיונות ומי שפשוט גורמים לדברים לקרות.</p>
+    <p class="lead">ענו על כמה שאלות קצרות, ובסוף נגלה איזו פעילות קהילתית בבית הספר מתאימה לכם. (אין התחייבות לשום דבר, רק מה שמתאים לכם/ן!)</p>
+    <div class="pills"><span class="pill">⏱️ בערך 2 דקות</span><span class="pill">👆 8 שאלות, לחיצה אחת כל אחת</span><span class="pill">💛 בלי התחייבות</span></div>
+    <button class="btn" id="start">יאללה, מתחילים</button>
+    <div class="w-logo"><img src="img/logo-full.webp" alt="ממ״ד קהילתי-תורני ארץ הצבי, חנוך לנער על פי דרכו" loading="lazy"></div>`;
+  $('#start', el).onclick = () => {
+    S.stage = 'details'; S.current_question = 0; persist(0);
+    go('details');
+  };
+}
+
+/* ---------- חזרה לשאלון ---------- */
+function renderResume(el) {
+  el.className += ' resume';
+  const n = S.stage === 'details' ? 0 : +S.stage.slice(1);
+  const hi = S.name ? `היי ${esc(S.name.trim())}, טוב לראות אותך שוב` : 'טוב לראות אותך שוב';
+  el.innerHTML = `
+    <span class="wave" aria-hidden="true">👋</span>
+    <h1 class="h-lg" style="margin:12px 0 10px">${hi}</h1>
+    <p class="lead">${n ? `עצרת בשאלה ${n} מתוך 8. כל מה שענית כבר שמור.` : 'התחלת למלא פרטים. הם כבר שמורים אצלנו.'}</p>
+    <div class="stack">
+      <button class="btn" id="cont">ממשיכים מאיפה שעצרתי</button>
+      <button class="btn white sm" id="over">מתחילים את השאלות מחדש</button>
+    </div>`;
+  $('#cont', el).onclick = () => go(S.stage);
+  $('#over', el).onclick = () => {
+    S.answers = {}; S.engagement = ''; S.stage = 'details'; S.current_question = 0; persist(0);
+    go('details');
+  };
+}
+
+/* ---------- פרטים ---------- */
+function renderDetails(el) {
+  const cols = CLASSES.length <= 8 ? 4 : CLASSES.length <= 15 ? 4 : 5;
+  el.innerHTML = `
+    <h1 class="h-lg" style="margin-top:6px">קודם כל, מי אתם?</h1>
+    <div class="nametag">
+      <div class="strip"><b>שלום!</b><span>קוראים לי</span></div>
+      <div class="slot"><label class="sr" for="nm">שם</label><input id="nm" autocomplete="name" placeholder="השם שלך" maxlength="60" value="${esc(S.name)}"></div>
+    </div>
+    <span class="f-label" id="clsl">באיזו כיתה הילדים?</span>
+    <p class="f-sub">יש לכם כמה ילדים בבית הספר? אפשר לסמן כמה כיתות.</p>
+    <div class="chips" role="group" aria-labelledby="clsl" style="grid-template-columns:repeat(${cols},1fr)">
+      ${CLASSES.map(c => `<button type="button" class="chip" aria-pressed="${S.classes.includes(c)}" data-c="${esc(c)}">${esc(c)}</button>`).join('')}
+    </div>
+    <div class="opt-box">
+      <span class="f-label" style="font-size:18px">איך נחזור אליכם?</span>
+      <div class="inp"><label class="sr" for="ph">טלפון</label>
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3h3l1.5 4.2-2 1.4a12 12 0 0 0 6.3 6.3l1.4-2L21 14.4v3A2.6 2.6 0 0 1 18.4 20 15.4 15.4 0 0 1 4 5.6 2.6 2.6 0 0 1 6.6 3z" fill="#F2C14E" stroke="${N}" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        <input id="ph" type="tel" inputmode="tel" dir="ltr" autocomplete="tel" placeholder="טלפון (לא חובה)" maxlength="20" value="${esc(S.phone)}"></div>
+      <div class="inp"><label class="sr" for="em">מייל</label>
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3" fill="#8CC8F0" stroke="${N}" stroke-width="1.8"/><path d="M4 7l8 6 8-6" fill="none" stroke="${N}" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        <input id="em" type="email" inputmode="email" dir="ltr" autocomplete="email" placeholder="מייל (לא חובה)" maxlength="80" value="${esc(S.email)}"></div>
+    </div>
+    <p class="hint"><span aria-hidden="true">💛</span><span>הפרטים יעזרו לנו לחבר אתכם לפעילות שמתאימה לכם. טלפון ומייל אינם חובה.</span></p>
+    <p class="err" id="err" role="alert"></p>
+    <button class="btn navy" id="go">קדימה לשאלות</button>`;
+  const bind = (id, key) => $(id, el).addEventListener('input', e => { S[key] = e.target.value; $('#err', el).textContent = ''; persist(800); });
+  bind('#nm', 'name'); bind('#ph', 'phone'); bind('#em', 'email');
+  $$('.chip', el).forEach(b => b.onclick = () => {
+    const c = b.dataset.c, on = !S.classes.includes(c);
+    S.classes = on ? [...S.classes, c] : S.classes.filter(x => x !== c);
+    S.classes.sort((a, b) => CLASSES.indexOf(a) - CLASSES.indexOf(b));
+    b.setAttribute('aria-pressed', on);
+    $('#err', el).textContent = '';
+    persist(500);
+  });
+  $('#go', el).onclick = () => {
+    const err = $('#err', el);
+    let msg = '';
+    if (!S.name.trim()) msg = 'רגע, איך קוראים לך?';
+    else if (!S.classes.length) msg = 'נשאר רק לסמן לפחות כיתה אחת';
+    else if (S.email.trim() && !/^\S+@\S+\.\S+$/.test(S.email.trim())) msg = 'נראה שחסר משהו בכתובת המייל';
+    if (msg) {
+      err.textContent = msg;
+      const tgt = !S.name.trim() ? $('.nametag', el) : !S.classes.length ? $('.chips', el) : $('#em', el).parentElement;
+      tgt.classList.remove('shake'); void tgt.offsetWidth; tgt.classList.add('shake');
+      if (!S.name.trim()) $('#nm', el).focus();
+      return;
+    }
+    S.stage = 'q1'; S.current_question = 1; persist(0);
+    go('q1');
+  };
+}
+
+/* ---------- שאלה ---------- */
+function optHTML(q, o, n) {
+  const was = S.answers['q'+n] === o.k ? ' was' : '';
+  if (q.type === 'chat') return `<button class="opt${was}" data-k="${o.k}"><span class="who" style="color:${o.wc}">${esc(o.who)}</span>${esc(o.t)}<span class="meta">${o.time}<span class="ticks" aria-hidden="true">✓✓</span></span></button>`;
+  if (q.type === 'quotes') return `<button class="opt${was}" data-k="${o.k}"><svg class="q" viewBox="0 0 40 30" aria-hidden="true"><rect width="40" height="30" rx="9" fill="${q.acc}" stroke="${N}" stroke-width="2.5"/><path d="M13 9q-5 2-5 9h5v-5M27 9q-5 2-5 9h5v-5" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>${esc(o.t)}</button>`;
+  if (q.type === 'chars') return `<button class="opt${was}" data-k="${o.k}" style="--c:${o.c}"><span class="art"><img src="img/${o.img}" alt="" width="280" height="280"></span><span class="nm">${esc(o.name)}</span><span class="ds">"${esc(o.t)}"</span></button>`;
+  if (q.type === 'meter') { const lv = 'abcd'.indexOf(o.k) + 1; return `<button class="opt${was}" data-k="${o.k}"><span class="meter" aria-hidden="true">${[12,20,28,36].map((h, i) => `<i style="height:${h}px" class="${i < lv ? 'on' : ''}"></i>`).join('')}</span><span class="tx">${esc(o.t)}</span></button>`; }
+  return `<button class="opt${was}" data-k="${o.k}"><span class="ic" aria-hidden="true">${o.e}</span><span class="tx">${esc(o.t)}</span></button>`;
+}
+function preloadChars() { Q[6].opts.forEach(o => { const i = new Image(); i.src = 'img/' + o.img; }); }
+function renderQuestion(el, n) {
+  const q = Q[n-1];
+  if (n >= 4) preloadChars();
+  el.style.setProperty('--acc', q.acc); el.style.setProperty('--acc-soft', q.soft);
+  const prevPct = ((n - 1) / 8) * 100, pct = (n / 8) * 100;
+  const list = `<div class="opts ${q.type === 'quotes' ? 'quotes' : ''} ${q.type === 'chars' ? 'chars' : ''}" role="group" aria-label="תשובות">${q.opts.map(o => optHTML(q, o, n)).join('')}</div>`;
+  el.innerHTML = `
+    <div class="qhead">
+      <button class="back" id="bk" aria-label="חזרה לשאלה הקודמת"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="${N}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="prog"><div class="count"><span>${n} מתוך 8</span><small>${n === 8 ? 'השאלה האחרונה!' : n >= 6 ? 'כמעט שם' : ''}</small></div>
+        <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="8" aria-valuenow="${n}" aria-label="התקדמות"><span style="width:${prevPct}%"></span></div></div>
+    </div>
+    <h2 class="qtitle">${esc(q.title)}</h2>
+    ${q.sub ? `<p class="qsub">${esc(q.sub)}</p>` : ''}
+    ${q.type === 'chat' ? `<div class="chat"><span class="day">היום</span>${list}</div>` : list}`;
+  requestAnimationFrame(() => requestAnimationFrame(() => { $('.bar span', el).style.width = pct + '%'; }));
+  $('#bk', el).onclick = () => {
+    if (n === 1) { S.stage = 'details'; S.current_question = 0; persist(0); go('details', 'b'); }
+    else { S.stage = 'q' + (n - 1); S.current_question = n - 1; persist(0); go('q' + (n - 1), 'b'); }
+  };
+  let locked = false;
+  $$('.opt', el).forEach(b => b.onclick = async () => {
+    if (locked) return; locked = true;
+    $$('.opt', el).forEach(x => x.classList.remove('was'));
+    b.classList.add('picked'); b.closest('.opts').classList.add('locked');
+    if (navigator.vibrate) try { navigator.vibrate(12); } catch (e) {}
+    S.answers['q'+n] = b.dataset.k;
+    if (n === 8) {
+      S.engagement = q.opts.find(o => o.k === b.dataset.k).v;
+      const r = ranking();
+      S.final1 = r[0]; S.final2 = r[1];
+      S.completed = true; if (!S.completed_at) S.completed_at = new Date().toISOString();
+      S.stage = 'results'; S.current_question = 9;
+    } else {
+      S.stage = 'q' + (n + 1); S.current_question = n + 1;
+    }
+    persist(0);
+    await wait(560);
+    go(n === 8 ? 'linking' : 'q' + (n + 1));
+  });
+}
+
+/* ---------- "מחברים את הנקודות" ---------- */
+function renderLinking(el) {
+  const cx = 150, cy = 150, R = 112, K = CLUSTERS.length;
+  const nodes = CLUSTERS.map((c, i) => { const a = -Math.PI / 2 + i * (2 * Math.PI / K); return { c, x: cx + R * Math.cos(a), y: cy + R * Math.sin(a), i }; });
+  const top = [S.final1, S.final2];
+  el.innerHTML = `
+    <div class="linking" id="lk">
+      <svg viewBox="0 0 300 300" aria-hidden="true">
+        ${nodes.map(nd => `<line class="ln" x1="${cx}" y1="${cy}" x2="${nd.x.toFixed(1)}" y2="${nd.y.toFixed(1)}" stroke="${top.includes(nd.c.id) ? nd.c.color : '#B4BDD2'}" stroke-width="${top.includes(nd.c.id) ? 5 : 2.5}" stroke-linecap="round" style="--len:${R};animation-delay:${250 + nd.i * 70}ms"/>`).join('')}
+        ${nodes.map(nd => `<g class="nd" style="animation-delay:${nd.i * 70}ms"><circle cx="${nd.x.toFixed(1)}" cy="${nd.y.toFixed(1)}" r="21" fill="${nd.c.soft}" stroke="${N}" stroke-width="2.5"/><svg x="${(nd.x - 14).toFixed(1)}" y="${(nd.y - 14).toFixed(1)}" width="28" height="28" viewBox="0 0 64 64">${(ICON[nd.c.icon] || ICON.community)(nd.c.color)}</svg></g>`).join('')}
+        <g class="core"><circle cx="${cx}" cy="${cy}" r="40" fill="#fff" stroke="${N}" stroke-width="3"/><image href="img/logo-mark.webp" x="${cx - 24}" y="${cy - 31}" width="48" height="63"/></g>
+      </svg>
+      <h2 class="say" id="say">רגע, אנחנו מחברים את הנקודות…</h2>
+    </div>`;
+  (async () => {
+    await wait(1700);
+    const lk = $('#lk', el); if (!lk) return;
+    lk.classList.add('found'); $('#say', el).textContent = 'מצאנו!';
+    await wait(750);
+    go('results', 'f', false);
+  })();
+}
+
+/* ---------- תוצאות ---------- */
+function blob() {
+  return `<svg class="b" viewBox="0 0 200 200" aria-hidden="true"><path d="M44.7-61.4C57.6-52.2 67.3-38.5 72.6-23.1 77.9-7.7 78.8 9.4 72.8 23.8 66.8 38.2 53.9 49.9 39.3 58.6 24.7 67.3 8.4 73 -8.6 74.4-25.6 75.8-43.3 72.9-55.6 62.8-67.9 52.7-74.8 35.4-77.4 18.2-80 1-78.3-16.1-71.1-30.2-63.9-44.3-51.2-55.4-37.1-64.4-23-73.4-7.5-80.3 7.1-80.8 21.7-81.3 31.8-70.6 44.7-61.4Z" transform="translate(100 100)" fill="#fff" stroke="${N}" stroke-width="5"/></svg>`;
+}
+function renderResults(el, instant) {
+  if (!CL[S.final1] || !CL[S.final2]) { const r = ranking(); S.final1 = r[0]; S.final2 = r[1]; }
+  const a = CL[S.final1], b = CL[S.final2];
+  const trait = TRAIT[S.answers.q1] || '';
+  const name = esc(S.name.trim() || 'היי');
+  S.draft = (S.draft || []).filter(id => CL[id]);
+  const others = CLUSTERS.filter(c => c.id !== a.id && c.id !== b.id);
+  const order = [a, b, ...others];
+  el.innerHTML = `
+    <h1 class="res-title">${name}, נראה שמצאנו את המקום שלך 👀</h1>
+
+    <article class="match reveal" id="m1" style="--soft:${a.soft}">
+      <span class="badge">הכי מתאים לך!</span>
+      <div class="top"><div class="blob">${blob()}${icon(a.id, 'i')}</div></div>
+      <div class="body">
+        <h2>${esc(a.name)}</h2>
+        ${trait ? `<span class="found-line">מה גילינו: ${trait}</span>` : ''}
+        <p>${esc(a.fit)}</p>
+        ${S.engagement ? `<div class="eng"><span aria-hidden="true">🧭</span><span>בקצב שבחרתם: ${ENG_TXT[S.engagement]}</span></div>` : ''}
+        <button class="btn join" data-id="${a.id}" data-on="✓ ברשימה שלי" data-off="רוצה להצטרף">רוצה להצטרף</button>
+      </div>
+    </article>
+
+    <article class="match two reveal" id="m2" style="--soft:${b.soft}">
+      <span class="badge second">מתאים לך מאוד</span>
+      <div class="top"><div class="blob">${blob()}${icon(b.id, 'i')}</div></div>
+      <div class="body">
+        <h2>${esc(b.name)}</h2>
+        <p>${esc(b.desc)} גם כאן יש התאמה חזקה למה שסיפרתם עליכם.</p>
+        <button class="btn white sm join" data-id="${b.id}" data-on="✓ ברשימה שלי" data-off="גם זה מעניין אותי">גם זה מעניין אותי</button>
+      </div>
+    </article>
+
+    <div class="share-row"><button class="btn white sm" id="share"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V4M7.5 8.5L12 4l4.5 4.5M5 13v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5" fill="none" stroke="${N}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>לשתף את התוצאה</button></div>
+
+    ${others.length ? `<h2 class="sec-title">ויש עוד המון דרכים להיות חלק</h2>
+    <p class="small" style="margin:0">לחצו על כל אחד כדי לקרוא עליו.</p>
+    <div class="others">${others.map(c => `<button class="ochip" data-id="${c.id}" style="--soft:${c.soft}"><span class="dot">${icon(c.id)}</span>${esc(c.short)}</button>`).join('')}</div>` : ''}
+
+    <section class="cta" aria-labelledby="ctat">
+      <img class="cta-mark" src="img/logo-mark.webp" alt="" aria-hidden="true">
+      <h2 class="sec-title" id="ctat">רוצה להיות חלק?</h2>
+      <p class="small">אפשר לבחור אחד או יותר מהאשכולות שמעניינים אותך.</p>
+      <div class="checks">${order.map(c => `
+        <label class="ck">
+          <input type="checkbox" value="${c.id}">
+          <span class="box"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="${N}" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          ${icon(c.id, 'mini')}
+          <span class="nm">${esc(c.name)}</span>
+          ${c.id === a.id || c.id === b.id ? `<span class="tag" style="--soft:${c.soft}">התאמה שלך</span>` : ''}
+        </label>`).join('')}</div>
+      <p class="err" id="cerr" role="alert" style="color:#FFB4A8"></p>
+      <button class="btn" id="submit">אני רוצה להצטרף</button>
+    </section>`;
+
+  const sync = () => {
+    $$('.join', el).forEach(btn => { const on = S.draft.includes(btn.dataset.id); btn.classList.toggle('on', on); btn.textContent = on ? btn.dataset.on : btn.dataset.off; btn.setAttribute('aria-pressed', on); });
+    $$('.ochip', el).forEach(ch => ch.classList.toggle('sel', S.draft.includes(ch.dataset.id)));
+    $$('.ck input', el).forEach(i => i.checked = S.draft.includes(i.value));
+    const k = S.draft.length; $('#submit', el).textContent = k > 1 ? `אני רוצה להצטרף (${k})` : 'אני רוצה להצטרף';
+    $('#cerr', el).textContent = '';
+    saveLocal();
+  };
+  const toggle = (id, force) => {
+    const on = force ?? !S.draft.includes(id);
+    S.draft = on ? [...new Set([...S.draft, id])] : S.draft.filter(x => x !== id);
+    sync(); return on;
+  };
+  $$('.join', el).forEach(btn => btn.onclick = () => {
+    const on = toggle(btn.dataset.id);
+    if (on) { toast('נוסף לרשימה שלך למטה 👇'); btn.animate?.([{transform:'scale(1)'},{transform:'scale(1.05)'},{transform:'scale(1)'}], {duration:300}); }
+  });
+  $$('.ck input', el).forEach(i => i.onchange = () => toggle(i.value, i.checked));
+  $$('.ochip', el).forEach(ch => ch.onclick = () => openSheet(ch.dataset.id, toggle));
+  $('#share', el).onclick = () => share(a);
+  $('#submit', el).onclick = () => {
+    if (!S.draft.length) { $('#cerr', el).textContent = 'סמנו לפחות אשכול אחד שמעניין אתכם'; return; }
+    S.selected = [...S.draft]; S.joined_at = new Date().toISOString(); S.stage = 'joined'; S.current_question = 9;
+    persist(0); flush();
+    go('success');
+  };
+  sync();
+
+  const r1 = $('#m1', el), r2 = $('#m2', el);
+  if (instant || RM) { r1.classList.add('in'); r2.classList.add('in'); }
+  else {
+    setTimeout(() => { r1.classList.add('in'); confetti(70); }, 120);
+    setTimeout(() => r2.classList.add('in'), 520);
+  }
+}
+
+/* ---------- דף תחתון ---------- */
+function openSheet(id, toggle) {
+  const c = CL[id];
+  const bg = document.createElement('div'); bg.className = 'sheet-bg';
+  const sh = document.createElement('div'); sh.className = 'sheet'; sh.setAttribute('role', 'dialog'); sh.setAttribute('aria-modal', 'true'); sh.setAttribute('aria-labelledby', 'sht');
+  sh.style.setProperty('--soft', c.soft);
+  const on = S.draft.includes(id);
+  sh.innerHTML = `<div class="grab"></div>
+    <div class="hd"><span class="dot">${icon(id)}</span><h2 class="h-md" id="sht">${esc(c.name)}</h2></div>
+    <p>${esc(c.desc)}</p>
+    <button class="btn ${on ? 'navy' : ''}" id="shb">${on ? '✓ ברשימה שלי' : 'מעניין אותי'}</button>
+    <button class="txt-btn" id="shx" style="display:block;margin:8px auto 0">סגירה</button>`;
+  document.body.append(bg, sh);
+  requestAnimationFrame(() => { bg.classList.add('on'); sh.classList.add('on'); });
+  const close = () => { bg.classList.remove('on'); sh.classList.remove('on'); setTimeout(() => { bg.remove(); sh.remove(); }, 320); document.removeEventListener('keydown', kd); };
+  const kd = e => { if (e.key === 'Escape') close(); };
+  document.addEventListener('keydown', kd);
+  bg.onclick = close; $('#shx', sh).onclick = close;
+  $('#shb', sh).onclick = () => { const v = toggle(id); if (v) toast('נוסף לרשימה שלך 💛'); close(); };
+  setTimeout(() => $('#shb', sh).focus(), 50);
+}
+
+/* ---------- הצלחה ---------- */
+function renderSuccess(el, instant) {
+  el.className += ' done';
+  const rays = Array.from({ length: 10 }, (_, i) => { const a = i * Math.PI / 5; return `<path class="ray" d="M${(100 + 70 * Math.cos(a)).toFixed(1)} ${(96 + 70 * Math.sin(a)).toFixed(1)}L${(100 + 84 * Math.cos(a)).toFixed(1)} ${(96 + 84 * Math.sin(a)).toFixed(1)}" stroke="${['#E8AE2E','#E2468F','#13968C','#6A5AE0','#EE5A4F'][i % 5]}" stroke-width="5" stroke-linecap="round"/>`; }).join('');
+  const sel = (S.selected || []).filter(id => CL[id]);
+  el.innerHTML = `
+    <svg class="heart" viewBox="0 0 200 190" aria-hidden="true">${rays}<g class="hb">${heartP(100, 96, 5.2, '#F2C14E')}</g></svg>
+    <h1 class="h-lg">איזה כיף שבאת 💛</h1>
+    <p class="lead">נציגי הנהגת ההורים יחזרו אליכם עם הפרטים.</p>
+    <div class="picked-list">${sel.map(id => `<span class="ochip" style="--soft:${CL[id].soft};cursor:default"><span class="dot">${icon(id)}</span>${esc(CL[id].short)}</span>`).join('')}</div>
+    <div class="stack">
+      <button class="btn" id="sh2">לשתף עם בן/בת הזוג</button>
+      <button class="btn white sm" id="edit">לשנות את הבחירה</button>
+      <button class="txt-btn" id="again">הורה נוסף במשפחה רוצה לענות? שאלון חדש</button>
+      <a class="txt-btn" href="/">לאתר בית הספר</a>
+    </div>
+    <img class="done-logo" src="img/logo-full.webp" alt="ממ״ד קהילתי-תורני ארץ הצבי" loading="lazy">`;
+  $('#sh2', el).onclick = () => share(CL[S.final1] || CLUSTERS[0]);
+  $('#edit', el).onclick = () => { S.draft = [...sel]; go('results', 'b', true); };
+  $('#again', el).onclick = () => {
+    const cls = [...S.classes];
+    S = freshState({ classes: cls }); persist(0);
+    go('welcome');
+  };
+  if (!instant) setTimeout(() => confetti(160), 200);
+}
+
+/* ---------- שיתוף ---------- */
+async function share(c) {
+  const url = location.origin + location.pathname.replace(/index\.html$/, '');
+  const text = `יצא לי "${c.short}" בשאלון "איזה הורה פעיל את/ה?" של ארץ הצבי 💛 ומה יוצא לך?`;
+  try { if (navigator.share) { await navigator.share({ title:'איזה הורה פעיל את/ה?', text, url }); return; } }
+  catch (e) { if (e.name === 'AbortError') return; }
+  window.open(`https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`, '_blank', 'noopener');
+}
+
+/* ---------- טוסט + קונפטי ---------- */
+let toastT;
+function toast(msg) { const t = $('#toast'); t.textContent = msg; t.classList.add('on'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('on'), 2200); }
+function confetti(count = 120) {
+  if (RM) return;
+  const cv = document.createElement('canvas'); cv.className = 'confetti'; document.body.appendChild(cv);
+  const ctx = cv.getContext('2d'), dpr = Math.min(devicePixelRatio || 1, 2);
+  const W = cv.width = innerWidth * dpr, H = cv.height = innerHeight * dpr;
+  const cols = ['#E8AE2E','#F2C14E','#E2468F','#13968C','#6A5AE0','#EE5A4F','#1E9ED6','#0E2547'];
+  const P = Array.from({ length: count }, () => ({
+    x: W / 2 + (Math.random() - .5) * W * .3, y: H * .32,
+    vx: (Math.random() - .5) * 14 * dpr, vy: (-Math.random() * 13 - 5) * dpr,
+    s: (5 + Math.random() * 6) * dpr, r: Math.random() * 6, vr: (Math.random() - .5) * .3,
+    c: cols[(Math.random() * cols.length) | 0], shape: Math.random() < .3 ? 1 : 0
+  }));
+  const t0 = performance.now();
+  (function frame(t) {
+    const el = t - t0; ctx.clearRect(0, 0, W, H);
+    P.forEach(p => {
+      p.vy += .38 * dpr; p.vx *= .99; p.x += p.vx; p.y += p.vy; p.r += p.vr;
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.r); ctx.fillStyle = p.c;
+      ctx.globalAlpha = Math.max(0, 1 - el / 2600);
+      if (p.shape) { ctx.beginPath(); ctx.arc(0, 0, p.s / 2, 0, 7); ctx.fill(); } else ctx.fillRect(-p.s / 2, -p.s / 4, p.s, p.s / 2);
+      ctx.restore();
+    });
+    if (el < 2600) requestAnimationFrame(frame); else cv.remove();
+  })(t0);
+}
+
+/* =========================================================
+   מסך הגדרות (מוגן בסיסמה, נשמר בשרת לכל הגולשים)
+   ========================================================= */
+let ADMIN_KEY = '', E = null, ETAB = 'clusters';
+async function api(body) {
+  const r = await fetch(API_URL, { method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify(body) });
+  return r.json();
+}
+function openGate() {
+  const bg = document.createElement('div'); bg.className = 'modal-bg';
+  bg.innerHTML = `<form class="modal" role="dialog" aria-modal="true" aria-labelledby="gt">
+    <h2 id="gt" class="h-md">הגדרות השאלון</h2>
+    <p class="small">הכניסה להנהגת ההורים בלבד.</p>
+    <label class="sr" for="gk">סיסמה</label>
+    <input id="gk" type="password" inputmode="numeric" autocomplete="off" placeholder="סיסמה">
+    <p class="err" id="ge" role="alert"></p>
+    <button class="btn navy sm" type="submit" id="gb">כניסה</button>
+    <button class="txt-btn" type="button" id="gx">ביטול</button></form>`;
+  document.body.appendChild(bg);
+  const close = () => bg.remove();
+  $('#gx', bg).onclick = close;
+  bg.addEventListener('click', e => { if (e.target === bg) close(); });
+  $('#gk', bg).focus();
+  $('form', bg).onsubmit = async e => {
+    e.preventDefault();
+    const key = $('#gk', bg).value.trim(), er = $('#ge', bg), btn = $('#gb', bg);
+    if (!key) { er.textContent = 'צריך להקליד סיסמה'; return; }
+    if (!API_URL) { er.textContent = 'השאלון עוד לא מחובר לשרת'; return; }
+    btn.disabled = true; btn.textContent = 'בודק…';
+    try {
+      const j = await api({ action:'auth', key });
+      if (j.ok) { ADMIN_KEY = key; close(); openEditor(); return; }
+      er.textContent = j.error === 'unknown action' ? 'צריך לעדכן את הקוד ב-Google Apps Script לגרסה החדשה' : 'הסיסמה לא נכונה';
+    } catch (x) { er.textContent = 'אין חיבור לשרת. נסו שוב.'; }
+    btn.disabled = false; btn.textContent = 'כניסה';
+  };
+}
+function openEditor() {
+  E = clone(currentConfig());
+  const ed = document.createElement('div'); ed.className = 'ed'; ed.id = 'ed';
+  ed.setAttribute('role', 'dialog'); ed.setAttribute('aria-modal', 'true'); ed.setAttribute('aria-label', 'הגדרות השאלון');
+  ed.innerHTML = `
+    <header class="ed-head"><h2>הגדרות השאלון</h2><button class="ed-x" id="edx" aria-label="סגירה">✕</button></header>
+    <nav class="ed-tabs" role="tablist">
+      <button role="tab" data-t="clusters">אשכולות</button>
+      <button role="tab" data-t="questions">שאלות וניקוד</button>
+      <button role="tab" data-t="classes">כיתות</button>
+    </nav>
+    <div class="ed-body" id="edb"></div>
+    <footer class="ed-foot">
+      <p class="err" id="ede" role="alert"></p>
+      <div class="ed-actions"><button class="btn sm" id="eds">שמירה לכל האתר</button><button class="btn white sm" id="edr">ברירת מחדל</button></div>
+    </footer>`;
+  document.body.appendChild(ed);
+  document.body.style.overflow = 'hidden';
+  $$('.ed-tabs button', ed).forEach(b => b.onclick = () => { ETAB = b.dataset.t; drawEditor(); });
+  $('#edx', ed).onclick = () => { if (confirm('לסגור בלי לשמור?')) closeEditor(); };
+  $('#edr', ed).onclick = () => {
+    if (!confirm('להחזיר את כל ההגדרות לברירת המחדל? השינוי יחול רק אחרי לחיצה על "שמירה לכל האתר".')) return;
+    E = defaultConfig(); drawEditor();
+  };
+  $('#eds', ed).onclick = saveEditor;
+  drawEditor();
+}
+function defaultConfig() {
+  return { classes:[...DEFAULT_CLASSES], clusters:clone(DEFAULT_CLUSTERS),
+    questions: DEFAULT_Q.map((q, i) => ({ title:q.title, sub:q.sub || '', opts:q.opts.map(o => {
+      const r = { k:o.k, t:o.t }; if (o.who) r.who = o.who; if (o.name) r.name = o.name; if (i < 7) r.s = { ...o.s }; return r; }) })) };
+}
+function closeEditor() { const ed = $('#ed'); if (ed) ed.remove(); document.body.style.overflow = ''; }
+
+function drawEditor() {
+  const ed = $('#ed'), body = $('#edb');
+  $$('.ed-tabs button', ed).forEach(b => b.setAttribute('aria-selected', b.dataset.t === ETAB));
+  if (ETAB === 'classes') drawClasses(body);
+  if (ETAB === 'clusters') drawClusters(body);
+  if (ETAB === 'questions') drawQuestions(body);
+}
+function move(arr, i, d) { const j = i + d; if (j < 0 || j >= arr.length) return; [arr[i], arr[j]] = [arr[j], arr[i]]; }
+const arrows = (i, len) => `<button class="mini-b" data-mv="-1" data-i="${i}" ${i === 0 ? 'disabled' : ''} aria-label="להזיז למעלה">▲</button><button class="mini-b" data-mv="1" data-i="${i}" ${i === len - 1 ? 'disabled' : ''} aria-label="להזיז למטה">▼</button>`;
+
+function drawClasses(body) {
+  body.innerHTML = `<p class="ed-note">הכיתות שהורים יכולים לסמן במסך הפרטים, לפי הסדר שמופיע כאן.</p>
+    <div class="ed-list">${E.classes.map((c, i) => `<div class="ed-row"><input class="ed-in" data-i="${i}" value="${esc(c)}" aria-label="שם כיתה">${arrows(i, E.classes.length)}<button class="mini-b del" data-del="${i}" aria-label="מחיקה">🗑</button></div>`).join('')}</div>
+    <button class="btn white sm add" id="addc">+ הוספת כיתה</button>`;
+  $$('.ed-in', body).forEach(inp => inp.oninput = () => E.classes[+inp.dataset.i] = inp.value);
+  $$('[data-mv]', body).forEach(b => b.onclick = () => { move(E.classes, +b.dataset.i, +b.dataset.mv); drawClasses(body); });
+  $$('[data-del]', body).forEach(b => b.onclick = () => { E.classes.splice(+b.dataset.del, 1); drawClasses(body); });
+  $('#addc', body).onclick = () => { E.classes.push(''); drawClasses(body); $$('.ed-in', body).pop().focus(); };
+}
+
+function drawClusters(body) {
+  body.innerHTML = `<p class="ed-note">הסדר כאן קובע גם את הסדר שבו נשבר שוויון סופי בניקוד. הניקוד של כל אשכול נקבע בלשונית "שאלות וניקוד".</p>
+    ${E.clusters.map((c, i) => `<details class="ed-card" style="--c:${c.color}" ${c._open ? 'open' : ''} data-i="${i}">
+      <summary><span class="ed-ic">${iconRaw(c.icon, c.color)}</span><span class="ed-sum">${esc(c.name || 'אשכול ללא שם')}</span><span class="ed-arr">${arrows(i, E.clusters.length)}</span></summary>
+      <label class="ed-f"><span>שם מלא</span><input data-k="name" value="${esc(c.name)}"></label>
+      <label class="ed-f"><span>שם קצר (לכפתורים)</span><input data-k="short" value="${esc(c.short)}"></label>
+      <label class="ed-f"><span>תיאור (מופיע בכרטיס ההמלצה השנייה ובמידע הנוסף)</span><textarea data-k="desc" rows="3">${esc(c.desc)}</textarea></label>
+      <label class="ed-f"><span>טקסט אישי כשהאשכול יוצא ראשון</span><textarea data-k="fit" rows="3">${esc(c.fit)}</textarea></label>
+      <div class="ed-two">
+        <label class="ed-f"><span>צבע</span><input type="color" data-k="color" value="${c.color}"></label>
+        <div class="ed-f"><span>אייקון</span><div class="ed-icons">${Object.keys(ICON).map(k => `<button type="button" data-ic="${k}" aria-label="אייקון" aria-pressed="${k === c.icon}">${iconRaw(k, c.color)}</button>`).join('')}</div></div>
+      </div>
+      <button type="button" class="txt-btn ed-del" data-del="${i}">הסרת האשכול</button>
+    </details>`).join('')}
+    <button class="btn white sm add" id="addk">+ הוספת אשכול או ועדה</button>`;
+  $$('.ed-card', body).forEach(card => {
+    const i = +card.dataset.i, c = E.clusters[i];
+    card.ontoggle = () => c._open = card.open;
+    $$('[data-k]', card).forEach(inp => inp.oninput = () => {
+      c[inp.dataset.k] = inp.value;
+      if (inp.dataset.k === 'name') $('.ed-sum', card).textContent = inp.value || 'אשכול ללא שם';
+      if (inp.dataset.k === 'color') { card.style.setProperty('--c', inp.value); $('.ed-ic', card).innerHTML = iconRaw(c.icon, c.color); $$('[data-ic]', card).forEach(b => b.innerHTML = iconRaw(b.dataset.ic, c.color)); }
+    });
+    $$('[data-ic]', card).forEach(b => b.onclick = () => { c.icon = b.dataset.ic; $$('[data-ic]', card).forEach(x => x.setAttribute('aria-pressed', x === b)); $('.ed-ic', card).innerHTML = iconRaw(c.icon, c.color); });
+    $$('[data-mv]', card).forEach(b => b.onclick = e => { e.preventDefault(); move(E.clusters, +b.dataset.i, +b.dataset.mv); drawClusters(body); });
+    $('[data-del]', card).onclick = () => {
+      if (E.clusters.length <= 2) { alert('צריך להשאיר לפחות שני אשכולות'); return; }
+      if (!confirm(`להסיר את "${c.name}"? הניקוד שלו בשאלות יימחק.`)) return;
+      E.clusters.splice(i, 1);
+      E.questions.forEach(q => q.opts.forEach(o => { if (o.s) delete o.s[c.id]; }));
+      drawClusters(body);
+    };
+  });
+  $('#addk', body).onclick = () => {
+    E.clusters.push({ id:'c_' + Date.now().toString(36), icon:'community', name:'', short:'', color:'#5B6CE0', desc:'', fit:'', _open:true });
+    drawClusters(body);
+    const cards = $$('.ed-card', body); const last = cards[cards.length - 1]; last.scrollIntoView({ behavior:'smooth', block:'center' }); $('input', last).focus();
+  };
+}
+
+function drawQuestions(body) {
+  body.innerHTML = `<p class="ed-note">אפשר לשנות ניסוח של שאלות ותשובות ואת הניקוד שכל תשובה נותנת לכל אשכול (0 = לא משפיע). שינוי בניקוד חל על מי שעונה מעכשיו.</p>
+    ${E.questions.map((q, qi) => {
+      const dq = DEFAULT_Q[qi];
+      return `<details class="ed-card q" ${q._open ? 'open' : ''} data-q="${qi}"><summary><span class="ed-num">${qi + 1}</span><span class="ed-sum">${esc(q.title)}</span></summary>
+        <label class="ed-f"><span>נוסח השאלה</span><input data-qk="title" value="${esc(q.title)}"></label>
+        ${dq.sub != null ? `<label class="ed-f"><span>שורת הסבר מתחת לשאלה</span><input data-qk="sub" value="${esc(q.sub)}"></label>` : ''}
+        ${q.opts.map((o, oi) => `<div class="ed-opt" data-o="${oi}">
+          <div class="ed-optt">תשובה ${HEB[o.k]}</div>
+          ${o.who != null ? `<label class="ed-f"><span>שם השולח בצ׳אט</span><input data-ok="who" value="${esc(o.who)}"></label>` : ''}
+          ${o.name != null ? `<label class="ed-f"><span>שם הדמות</span><input data-ok="name" value="${esc(o.name)}"></label>` : ''}
+          <label class="ed-f"><span>${o.name != null ? 'תיאור הדמות' : 'נוסח התשובה'}</span><input data-ok="t" value="${esc(o.t)}"></label>
+          ${o.s ? `<div class="ed-scores">${E.clusters.map(c => `<label class="ed-sc${o.s[c.id] ? ' on' : ''}" style="--c:${c.color}"><span>${esc(c.short || c.name || '?')}</span><input type="number" min="0" max="20" inputmode="numeric" data-sc="${c.id}" value="${o.s[c.id] || 0}"></label>`).join('')}</div>`
+            : '<p class="ed-note" style="margin:4px 0 0">התשובה הזאת לא משפיעה על הניקוד. היא נשמרת כרמת מעורבות.</p>'}
+        </div>`).join('')}
+      </details>`;
+    }).join('')}`;
+  $$('.ed-card.q', body).forEach(card => {
+    const q = E.questions[+card.dataset.q];
+    card.ontoggle = () => q._open = card.open;
+    $$('[data-qk]', card).forEach(inp => inp.oninput = () => { q[inp.dataset.qk] = inp.value; if (inp.dataset.qk === 'title') $('.ed-sum', card).textContent = inp.value; });
+    $$('.ed-opt', card).forEach(box => {
+      const o = q.opts[+box.dataset.o];
+      $$('[data-ok]', box).forEach(inp => inp.oninput = () => o[inp.dataset.ok] = inp.value);
+      $$('[data-sc]', box).forEach(inp => inp.oninput = () => { const v = Math.max(0, Math.min(20, Math.round(+inp.value || 0))); if (v) o.s[inp.dataset.sc] = v; else delete o.s[inp.dataset.sc]; inp.parentElement.classList.toggle('on', !!v); });
+    });
+  });
+}
+
+async function saveEditor() {
+  const er = $('#ede'), btn = $('#eds');
+  er.textContent = '';
+  const cfg = clone(E);
+  cfg.classes = cfg.classes.map(s => String(s).trim()).filter(Boolean);
+  cfg.clusters.forEach(c => { delete c._open; c.name = c.name.trim(); c.short = (c.short || '').trim() || c.name; });
+  cfg.questions.forEach(q => { delete q._open; });
+  if (!cfg.classes.length) { er.textContent = 'צריך לפחות כיתה אחת'; ETAB = 'classes'; drawEditor(); return; }
+  if (new Set(cfg.classes).size !== cfg.classes.length) { er.textContent = 'יש כיתה שמופיעה פעמיים'; ETAB = 'classes'; drawEditor(); return; }
+  if (cfg.clusters.length < 2) { er.textContent = 'צריך לפחות שני אשכולות'; return; }
+  const noName = cfg.clusters.find(c => !c.name);
+  if (noName) { er.textContent = 'לכל אשכול צריך שם'; ETAB = 'clusters'; noName._open = true; E = cfg; drawEditor(); return; }
+  if (new Set(cfg.clusters.map(c => c.name)).size !== cfg.clusters.length) { er.textContent = 'יש שני אשכולות עם אותו שם'; return; }
+  if (cfg.questions.some(q => !q.title.trim() || q.opts.some(o => !o.t.trim()))) { er.textContent = 'יש שאלה או תשובה ריקה'; ETAB = 'questions'; drawEditor(); return; }
+  btn.disabled = true; btn.textContent = 'שומר…';
+  try {
+    const j = await api({ action:'saveConfig', key:ADMIN_KEY, config:cfg });
+    if (!j.ok) throw new Error(j.error === 'unauthorized' ? 'הסיסמה לא אושרה בשרת' : (j.error || 'השמירה נכשלה'));
+    applyConfig(cfg);
+    try { localStorage.setItem(CFG_KEY, JSON.stringify(cfg)); } catch (e) {}
+    closeEditor();
+    toast('נשמר לכל האתר ✓');
+    go('welcome');
+  } catch (x) {
+    er.textContent = x.message && !/fetch/i.test(x.message) ? x.message : 'אין חיבור לשרת. השינויים לא נשמרו.';
+    btn.disabled = false; btn.textContent = 'שמירה לכל האתר';
+  }
+}
+
+$('#gear').onclick = openGate;
+boot();
+
+</script>
+</body>
+</html>
