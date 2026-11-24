@@ -480,7 +480,7 @@
     function p(html) { var el = document.createElement("p"); el.innerHTML = html; body.appendChild(el); }
     if (yes) {
       p("אישור ההגעה שלכם התקבל.");
-      p("אנחנו מחכים לפגוש אתכם <strong>ביום רביעי, 23 בדצמבר, בשעה 19:00</strong>.");
+      p("אנחנו מחכים לפגוש אתכם <strong>ביום רביעי, אור לי\"ד בטבת ה'תשפ\"ז (23 בדצמבר), בשעה 19:00</strong>.");
     } else {
       p("אנו מצטערים שלא תוכלו להצטרף אלינו למפגש.");
       p('נשמח לעמוד לרשותכם בכל שאלה באמצעות הדוא"ל של בית הספר: <a href="mailto:e.hatzvi17@gmail.com" dir="ltr">e.hatzvi17@gmail.com</a>');

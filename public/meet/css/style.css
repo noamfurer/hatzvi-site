@@ -344,6 +344,9 @@ input[dir=ltr]{text-align:right}
 .sprout{width:110px;height:auto;fill:none;stroke:#8cc63f;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
 .sprout path:nth-child(3),.sprout path:nth-child(4){fill:rgba(140,198,63,.25)}
 .home-link{margin-top:6px;color:#bcd0ea;font-weight:700;text-underline-offset:4px}
+.legal{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px 8px;margin-top:14px;font-size:.8rem;color:#8a9bb6}
+.legal a{color:#8a9bb6;text-decoration:none;padding:6px 2px}
+.legal a:hover,.legal a:focus-visible{color:#cfdbec;text-decoration:underline;text-underline-offset:3px}
 
 /* =====================================================================
    Floating CTA, toast, confetti
