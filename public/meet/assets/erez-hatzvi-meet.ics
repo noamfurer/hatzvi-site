@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Eretz HaTzvi//Meet//HE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:meet-2026-12-23@hatzvi.site
+DTSTAMP:20261124T180000Z
+DTSTART:20261223T170000Z
+DTEND:20261223T183000Z
+SUMMARY:ערב היכרות לכיתה א' – בית הספר ארץ הצבי
+LOCATION:בית הספר ארץ הצבי\, רחוב אריאל שרון 17\, שכונת מורשת\, מודיעין-מכבים-רעות
+DESCRIPTION:מפגש היכרות להורי התלמידים העתידים לעלות לכיתה א'.\nפרטים: https://hatzvi.site/meet/
+URL:https://hatzvi.site/meet/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ערב היכרות בארץ הצבי
+TRIGGER:-PT3H
+END:VALARM
+END:VEVENT
+END:VCALENDAR
