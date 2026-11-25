@@ -91,7 +91,7 @@
             <span>לאישור הגעה למפגש</span>
             <svg class="btn-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
           </a>
-          <p class="cta-note">4 שדות חובה בלבד · פחות מדקה</p>
+          <p class="cta-note">5 שדות חובה בלבד · פחות מדקה</p>
         </div>
 
         <div class="letter reveal">
@@ -243,9 +243,15 @@
             </div>
 
             <div class="field">
-              <label for="gan">באיזה גן לומד/ת הילד/ה כיום? <span class="req" aria-hidden="true">*</span><span class="visually-hidden">(חובה)</span></label>
-              <input id="gan" name="gan" type="text" autocomplete="off" enterkeyhint="next" maxlength="80" required aria-describedby="gan-err">
+              <label for="gan">באיזה גן לומד/ת הילד/ה כיום? <span class="req" aria-hidden="true">*</span><span class="visually-hidden">(חובה)</span> <span class="label-note">(אם הגן נמצא מחוץ למודיעין, נא לציין זאת)</span></label>
+              <input id="gan" name="gan" type="text" autocomplete="off" enterkeyhint="next" maxlength="120" required aria-describedby="gan-err">
               <p class="field-err" id="gan-err"></p>
+            </div>
+
+            <div class="field">
+              <label for="phone">מספר טלפון נייד <span class="req" aria-hidden="true">*</span><span class="visually-hidden">(חובה)</span></label>
+              <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" enterkeyhint="next" maxlength="20" dir="ltr" placeholder="050-1234567" required aria-describedby="phone-err">
+              <p class="field-err" id="phone-err"></p>
             </div>
 
             <fieldset class="field choice-big" id="attendingSet" aria-describedby="attending-err">
@@ -271,18 +277,13 @@
 
             <div class="progress" aria-hidden="true">
               <div class="progress-bar"><span id="progressFill"></span></div>
-              <p id="progressText">נשארו 4 שדות חובה</p>
+              <p id="progressText">נשארו 5 שדות חובה</p>
             </div>
 
             <div class="optional-head">
               <span>פרטים נוספים</span><small>רשות – רק אם תרצו</small>
             </div>
 
-            <div class="field">
-              <label for="phone">מספר טלפון נייד <span class="opt">(רשות)</span></label>
-              <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" enterkeyhint="next" maxlength="20" dir="ltr" placeholder="050-1234567" aria-describedby="phone-err">
-              <p class="field-err" id="phone-err"></p>
-            </div>
 
             <fieldset class="field">
               <legend>האם לילד/ה יש אחים או אחיות גדולים? <span class="opt">(רשות)</span></legend>
