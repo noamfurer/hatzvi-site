@@ -224,7 +224,7 @@
       gan: function (v) { return v ? "" : "שדה חובה"; },
       attending: function (v) { return v ? "" : "שדה חובה"; },
       phone: function (v) {
-        if (!v) return "";
+        if (!v) return "שדה חובה";
         return /^05\d{8}$/.test(normalizePhone(v)) ? "" : "מספר לא תקין (לדוגמה: 050-1234567)";
       }
     };
@@ -266,7 +266,7 @@
   }
 
   function updateProgress() {
-    var req = ["parentName", "childName", "gan", "attending"];
+    var req = ["parentName", "childName", "gan", "phone", "attending"];
     var v = validators();
     var done = req.filter(function (k) { return val(k) && !v[k](val(k)); }).length;
     var left = req.length - done;
@@ -293,10 +293,10 @@
       el.addEventListener("keydown", function (e) {
         if (e.key === "Enter" && !e.isComposing) {
           e.preventDefault();
-          var order = ["parentName", "childName", "gan"];
+          var order = ["parentName", "childName", "gan", "phone"];
           var i = order.indexOf(name);
           if (i > -1 && i < order.length - 1) form.elements[order[i + 1]].focus();
-          else if (name === "gan") form.querySelector('input[name="attending"]').focus();
+          else if (name === "phone") form.querySelector('input[name="attending"]').focus();
           else el.blur();
         }
       });
@@ -417,7 +417,7 @@
       childName: val("childName"),
       gan: val("gan"),
       attending: val("attending"),
-      phone: val("phone") ? normalizePhone(val("phone")) : "",
+      phone: normalizePhone(val("phone")),
       siblings: val("siblings"),
       siblingsWhere: val("siblings") === "yes" ? val("siblingsWhere") : "",
       questions: val("questions"),
