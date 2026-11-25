@@ -228,6 +228,7 @@ button,input,textarea{font:inherit;color:inherit}
 .req-note{font-size:.92rem;color:var(--muted);margin-bottom:6px}
 .req{color:var(--err);font-weight:800}
 .opt{color:var(--muted);font-weight:600;font-size:.92em}
+.label-note{display:block;color:var(--muted);font-weight:600;font-size:.9em;line-height:1.4}
 .field{margin:0 0 16px;padding:0;border:0;min-width:0}
 .field label,.field legend{display:block;font-weight:800;font-size:1.05rem;color:var(--navy);margin-bottom:6px;padding:0}
 .hint{font-size:.93rem;color:var(--muted);margin:-2px 0 6px}
