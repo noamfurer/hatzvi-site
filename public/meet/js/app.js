@@ -445,10 +445,14 @@
           return;
         }
         var code = res && res.error;
-        if ((code === "token" || code === "too_fast") && attempt < 1) {
+        if (code === "too_fast" && attempt < 2) {
+          // שומרים על אותו אסימון ומחכים שיעברו כמה שניות
+          setTimeout(function () { send(payload, attempt + 1); }, 4500);
+          return;
+        }
+        if (code === "token" && attempt < 2) {
           token = null;
-          var wait = code === "too_fast" ? 2500 : 0;
-          setTimeout(function () { send(payload, attempt + 1); }, wait);
+          setTimeout(function () { send(payload, attempt + 1); }, 4500);
           return;
         }
         setLoading(false);
@@ -457,7 +461,7 @@
           Object.keys(res.fields).forEach(function (k) { setError(k, res.fields[k]); });
           showSendError("חלק מהפרטים לא התקבלו. נא לבדוק את השדות המסומנים ולנסות שוב.");
         } else if (code === "busy") showSendError("המערכת עמוסה כרגע. נא לנסות שוב בעוד רגע.");
-        else showSendError("הפרטים לא נשמרו בגלל תקלה. אפשר ללחוץ שוב על \"שליחת אישור הגעה\" – הפרטים שמילאתם נשארו בטופס.");
+        else showSendError("הפרטים לא נשמרו בגלל תקלה. אפשר ללחוץ שוב על \"שליחת אישור הגעה\" – הפרטים שמילאתם נשארו בטופס. (קוד: " + (code || "unknown") + (res && res.detail ? " – " + res.detail : "") + ")");
       })
       .catch(function (err) {
         setLoading(false);
